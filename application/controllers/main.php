@@ -71,4 +71,46 @@ class Main extends CI_Controller {
 	public function contact(){
 		$this->load->view("contact");
 	}
+
+	public function sendmail(){
+		$this->load->model("user");
+		$admin = $this->user->email();
+		$name = $this->input->post("Name");
+		$email = $this->input->post("Email");
+		$message = $this->input->post("Message");
+		$config = array(
+	    'protocol' => 'smtp',
+	    'smtp_host' => 'ssl://smtp.googlemail.com',
+	    'smtp_port' => 465,
+	    'smtp_user' => 'email.edwinprasetyo@gmail.com',
+	    'smtp_pass' => 'edwinprasetyo',
+	    'mailtype'  => 'html',
+	    'charset'   => 'iso-8859-1'
+		);
+
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+
+		$this->email->initialize($config);
+
+		$this->email->from('email.edwinprasetyo@gmail.com', 'Admin Email');
+		$this->email->to($admin->email);
+
+		$this->email->subject($name . ' wants to talk to you.');
+		$this->email->message('
+			Email : ' . $email . '<br>
+			Name : ' . $name .' <hr>
+			Message : ' . $message .'
+		');
+
+		if($this->email->send()){
+			$this->load->model("message");
+			$this->message->add($name,$email,$message);
+			$this->session->set_flashdata('status','success');
+		}else{
+			$this->session->set_flashdata('status','failed');
+		}
+
+		redirect("contact");
+	}
 }

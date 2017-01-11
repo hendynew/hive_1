@@ -33,7 +33,15 @@
     <div class="contcontact sendmeyour w-container">
       <h1 class="contact stay textkeunggulan">SEND ME YOUR MESSAGE</h1>
       <div class="w-form">
-        <form class="form formcontact" data-name="Email Form" id="email-form" name="email-form">
+        <?php
+          $arr = [
+            "class"=>"form formcontact",
+            "data-name"=>"Email Form",
+            "id"=>"email-form",
+            "name"=>"email-form"
+          ];
+          echo form_open("sendmail",$arr);
+        ?>
           <div class="w-row">
             <div class="w-col w-col-6">
               <input class="fieldcontact textfield w-input" data-name="Name" id="Name" maxlength="256" name="Name" placeholder="What&#39;s your name?" required="required" type="text">
@@ -43,6 +51,10 @@
             </div>
           </div>
           <textarea class="fieldcontact textarea textfield w-input" data-name="Message" id="Message" maxlength="5000" name="Message" placeholder="Let&#39;s talk"></textarea>
+          <div class="divsumbit">
+            <?php $arr = array("class"=>"send submit-button w-inline-block","name"=>"btnSubmit"); ?>
+            <?= form_submit($arr)?>
+          </div>
         </form>
         <div class="w-form-done">
           <div>Thank you! Your submission has been received!</div>
@@ -50,9 +62,6 @@
         <div class="w-form-fail">
           <div>Oops! Something went wrong while submitting the form</div>
         </div>
-      </div>
-      <div class="divsumbit">
-        <a class="send submit-button w-inline-block" href="#"></a>
       </div>
     </div>
   </div>
@@ -83,5 +92,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="<?php echo base_url()?>/resources/js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="<?php echo base_url()?>/resources/https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <?php
+    if($this->session->flashdata('status') == 'success'){
+      echo "<script>$('.w-form-done').slideDown();</script>";
+    }else if($this->session->flashdata('status') == 'failed'){
+      echo "<script>$('.w-form-fail').slideDown();</script>";
+    }?>
 </body>
 </html>

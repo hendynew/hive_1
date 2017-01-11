@@ -16,4 +16,8 @@ class User extends CI_Model {
 		$this->db->where($arr);
 		return $this->db->get("user")->row();
 	}
+
+	public function email(){
+		return $this->db->select("email")->get("user")->row();
+	}
 }

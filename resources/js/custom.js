@@ -50,6 +50,10 @@ $(document).ready(function(){
     var target = $("#" + monthTarget + " > a");
     monthBlogOnClick(target);
   });
+
+  $(".send").click(function(){
+    alert("test");
+  });
 });
 
 $(".btn-prev-blog-posts").click(function(){

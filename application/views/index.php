@@ -44,7 +44,7 @@
       <div class="pentingnyacolleft w-col w-col-6"></div>
       <div class="coltext-pentingnya w-col w-col-6">
         <h3 class="txt-pentingnya">Pentingnya</h3>
-        <h1 class="txt-tradingonline">TRADING ONLINE</h1><img class="garismerahtrading" sizes="(max-width: 479px) 100vw, (max-width: 767px) 69vw, (max-width: 991px) 33vw, 32vw" src="<?php echo base_url("resources/") ?>images/garismerah-29.png" srcset="<?php echo base_url("resources/")?>images/garismerah-29-p-500x32.png 500w, images/garismerah-29.png 626w" width="391">
+        <h1 class="txt-tradingonline">TRADING ONLINE</h1><img class="garismerahtrading" sizes="(max-width: 479px) 100vw, (max-width: 767px) 69vw, (max-width: 991px) 33vw, 32vw" src="<?php echo base_url("resources/") ?>images/garismerah-29.png" srcset="<?php echo base_url("resources/")?>images/garismerah-29-p-500x32.png 500w, <?php echo base_url("resources/")?>images/garismerah-29.png 626w" width="391">
         <p class="paragraph-trading-online">Di era modern ini, seluruh kegiatan kita lakukan secara online. Begitu juga dengan trading. Online trading menjadi sangat menarik di era serba digital ini karena berhasil menggabungkan konsep trading ruang dan waktu secara bersamaan. Internet membuat online trading memiliki lingkup internasional sehingga memungkinkan adanya penjual &amp; pembeli setiap waktu. Sayangnya tidak adanya batas online trading ini justru mendatangkan tantangan baru bagi kita, pelakunya. Namun, orang tetap dapat bertahan di dunia online trading jika didukung dengan skill, pengalaman, serta analisa yang baik.</p>
       </div>
     </div>
