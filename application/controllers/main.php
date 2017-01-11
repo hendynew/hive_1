@@ -52,8 +52,10 @@ class Main extends CI_Controller {
 		}
 	}
 
-	public function blog(){
+	public function blog($activeMonth = '1',$activeYear='2017'){
 		$this->load->model("post");
+		$data['activeMonth'] = $activeMonth;
+		$data['activeMonth'] = $activeYear;
 		$data['posts'] = $this->post->all_post();
 		$this->load->view("blog",$data);
 	}

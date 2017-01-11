@@ -26,12 +26,12 @@ class Post extends CI_Model {
 	}
 
 	public function count_post(){
-		return $this->db->count_all("post") + 1;
+		return $this->db->count_all("post");
 	}
 
 	public function new_post($title,$post){
 		$arr = [
-			"post_id"=>$this->count_post(),
+			"post_id"=>$this->count_post() + 1,
 			"title"=>$title,
 			"post"=>$post,
 			"status"=>1

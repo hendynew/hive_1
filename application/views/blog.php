@@ -50,14 +50,25 @@
       </a>
       <div class="div-month-blog" data-year="2017">
         <a class="btnprev w-inline-block" href="#"></a>
-        <a class="monthblog-text w-inline-block" id="1" href="#">
-          <h3 class="monthblog monthblog-active">JAN 2016</h3>
-        </a>
+        <?php
+          for($i = 1; $i <= 12; $i++){
+            $class = ($i == $activeMonth ? "monthblog-active" : "");
+            $month = strtodate('MON',$i);
+            ?>
+            <a class="monthblog-text w-inline-block" id="<?= $i ?>" href="#">
+              <h3 class="monthblog <?= $class ?>"><?= $month ?> <?= $activeYear?></h3>
+            </a>
+          <?php}
+        ?>
+
         <a class="monthblog-text w-inline-block" id="2" href="#">
           <h3 class="monthblog">FEB 2016</h3>
         </a>
         <a class="monthblog-text w-inline-block" id="3" href="#">
           <h3 class="monthblog">MAR 2016</h3>
+        </a>
+        <a class="monthblog-text w-inline-block" id="3" href="#">
+          <h3 class="monthblog">APR 2016</h3>
         </a>
         <a class="monthblog-text w-inline-block" id="1" href="#">
           <h3 class="monthblog">...</h3>
