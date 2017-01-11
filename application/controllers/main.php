@@ -11,7 +11,7 @@ class Main extends CI_Controller {
 	}
 
 	public function index(){
-		$this->load->view('login');
+		$this->load->view('index');
 	}
 
 	public function login(){
@@ -50,5 +50,25 @@ class Main extends CI_Controller {
 			$this->post->new_post($title,$post);
 			redirect("main/home");
 		}
+	}
+
+	public function blog(){
+		$this->load->model("post");
+		$data['posts'] = $this->post->all_post();
+		$this->load->view("blog",$data);
+	}
+
+	public function view_blog($id_blog){
+		$this->load->model("post");
+		$data["post"] = $this->post->view_post($id_blog);
+		$this->load->view("blog-content-1",$data);
+	}
+
+	public function about(){
+		$this->load->view("about");
+	}
+
+	public function contact(){
+		$this->load->view("contact");
 	}
 }
