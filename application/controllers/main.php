@@ -54,7 +54,6 @@ class Main extends CI_Controller {
 
 	public function blog(){
 		$this->load->library("pagination");
-		//$this->load->library("myPagination");
 		$this->load->model("post");
 		$activeMonth = 1;
 		$activeYear = 2017;

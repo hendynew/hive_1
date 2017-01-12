@@ -49,23 +49,7 @@
           <br>Latest Blog Post</div>
       </a>
       <div class="div-month-blog" data-year="2017">
-        <?php
-        /*
-          $counter = 0;
-          for($i = 1; $i <= 12; $i++){
-            if( ($activeMonth - 2 <= $i) && ($activeMonth + 2 >= $i) || $i == $activeMonth){
-              $class = ($i == $activeMonth ? "monthblog-active" : "");
-              $time = date("M Y",strtotime("1-".$i."-".$activeYear));
-              echo
-              '<a class="monthblog-text w-inline-block" href="#">
-                <h3  id="' . $i .'" class="monthblog ' . $class .'">' . $time . '</h3>
-              </a>';
-              $counter++;
-            }
-          }*/
-          echo $link;
-
-        ?>
+        <?= echo $link; ?>
       </div>
 
       <a class="btn-prev-blog-posts mobile w-inline-block" href="#">
