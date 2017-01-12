@@ -59,5 +59,5 @@ $route['about'] = 'main/about';
 $route['blog'] = 'main/blog';
 $route['contact'] = 'main/contact';
 
-$route['blog/(:any)'] = 'main/blog/$1';
+$route['blog/(:num)'] = 'main/blog/$1';
 $route['view_blog/(:any)'] = 'main/view_blog/$1';

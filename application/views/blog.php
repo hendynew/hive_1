@@ -49,8 +49,8 @@
           <br>Latest Blog Post</div>
       </a>
       <div class="div-month-blog" data-year="2017">
-        <a class="btnprev w-inline-block" href="#"></a>
         <?php
+        /*
           $counter = 0;
           for($i = 1; $i <= 12; $i++){
             if( ($activeMonth - 2 <= $i) && ($activeMonth + 2 >= $i) || $i == $activeMonth){
@@ -62,11 +62,12 @@
               </a>';
               $counter++;
             }
-          }
+          }*/
+          echo $link;
+
         ?>
-        <a class="btnnext btnprev w-inline-block" href="#"></a>
       </div>
-      <?= $link ?>
+
       <a class="btn-prev-blog-posts mobile w-inline-block" href="#">
         <div class="btn-prev-blog-posts head">p r e v</div>
       </a>
