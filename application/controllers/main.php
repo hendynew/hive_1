@@ -52,10 +52,23 @@ class Main extends CI_Controller {
 		}
 	}
 
-	public function blog($activeMonth = '1',$activeYear='2017'){
+	public function blog($segment){
+		$this->load->library("pagination");
 		$this->load->model("post");
+		$activeMonth = 1;
+		$activeYear = 2017;
 		$data['activeMonth'] = $activeMonth;
-		$data['activeMonth'] = $activeYear;
+		$data['activeYear'] = $activeYear;
+		$config['base_url'] = base_url() . "index.php/main/blog/";
+		$config["total_rows"] = 12;
+		$config['per_page'] = 1;
+		$config['use_page_numbers'] = TRUE;
+		$config['num_links'] = 5;
+		$config['next_link'] = 'Next';
+		$config['prev_link'] = 'Previous';
+		$config["uri_segment"] = ($this->uri->segment(6) ? $this->uri->segment(6) : 1);
+		$this->pagination->initialize($config);
+		$data['link'] = $this->pagination->create_links();
 		$data['posts'] = $this->post->all_post();
 		$this->load->view("blog",$data);
 	}

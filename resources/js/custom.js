@@ -12,7 +12,6 @@ function monthBlogOnClick(element){
   if(activeMonthBlog[0] != element){
     $(".monthblog").removeClass("monthblog-active");
     $(element).addClass("monthblog-active");
-
   }
 }
 
@@ -40,6 +39,13 @@ $(document).ready(function(){
               }
         }
     ]
+  });
+
+  $(".monthblog").click(function(){
+    var month = this.id;
+    var year = $(".div-month-blog").data("year");
+    //window.location= window.location.hostname + window.location. + "/blog/" + month + "/" + year;
+    alert(window.location.protocol);
   });
 
   $(".btnnext").click(function(){

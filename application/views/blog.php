@@ -51,33 +51,22 @@
       <div class="div-month-blog" data-year="2017">
         <a class="btnprev w-inline-block" href="#"></a>
         <?php
+          $counter = 0;
           for($i = 1; $i <= 12; $i++){
-            $class = ($i == $activeMonth ? "monthblog-active" : "");
-            $month = strtodate('MON',$i);
-            ?>
-            <a class="monthblog-text w-inline-block" id="<?= $i ?>" href="#">
-              <h3 class="monthblog <?= $class ?>"><?= $month ?> <?= $activeYear?></h3>
-            </a>
-          <?php}
+            if( ($activeMonth - 2 <= $i) && ($activeMonth + 2 >= $i) || $i == $activeMonth){
+              $class = ($i == $activeMonth ? "monthblog-active" : "");
+              $time = date("M Y",strtotime("1-".$i."-".$activeYear));
+              echo
+              '<a class="monthblog-text w-inline-block" href="#">
+                <h3  id="' . $i .'" class="monthblog ' . $class .'">' . $time . '</h3>
+              </a>';
+              $counter++;
+            }
+          }
         ?>
-
-        <a class="monthblog-text w-inline-block" id="2" href="#">
-          <h3 class="monthblog">FEB 2016</h3>
-        </a>
-        <a class="monthblog-text w-inline-block" id="3" href="#">
-          <h3 class="monthblog">MAR 2016</h3>
-        </a>
-        <a class="monthblog-text w-inline-block" id="3" href="#">
-          <h3 class="monthblog">APR 2016</h3>
-        </a>
-        <a class="monthblog-text w-inline-block" id="1" href="#">
-          <h3 class="monthblog">...</h3>
-        </a>
-        <a class="monthblog-text w-inline-block" id="12" href="#">
-          <h3 class="monthblog">DEC 2016</h3>
-        </a>
         <a class="btnnext btnprev w-inline-block" href="#"></a>
       </div>
+      <?= $link ?>
       <a class="btn-prev-blog-posts mobile w-inline-block" href="#">
         <div class="btn-prev-blog-posts head">p r e v</div>
       </a>
@@ -85,7 +74,7 @@
         <div class="colblogs w-row">
           <?php for($i=0; $i < sizeof($posts); $i++){?>
             <div class="colblogpost w-col w-col-4">
-              <a class="blogpost linkblogpost w-inline-block" href="<?php echo base_url()?>blog/<?= $posts[$i]['post_id'] ?>">
+              <a class="blogpost linkblogpost w-inline-block" href="<?php echo base_url()?>view_blog/<?= $posts[$i]['post_id'] ?>">
                 <div class="thumbnail"><img src="<?php echo base_url()?>resources/images/<?= ($posts[$i]['url_image'] != "" ? $posts[$i]['url_image'] : "Images9.jpg")?>">
                 </div>
                 <h2 class="head-blog-post"><?= $posts[$i]['date']?></h2>
