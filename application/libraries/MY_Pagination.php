@@ -201,6 +201,12 @@ class MY_Pagination extends CI_Pagination {
 
 			$output .= $this->first_tag_open.'<a class="monthblog-text w-inline-block" href="'.$first_url.'"'.$attributes.$this->_attr_rel('start').'><h3  id="1" class="monthblog">'
 				.$this->first_link.$this->first_tag_close;
+
+				//MEMBUAT TITIK TITIK
+				if($this->cur_page > 4){
+					$output .= $this->last_tag_open.'<a class="monthblog-text w-inline-block" href="'.$base_url.$this->prefix."3".$this->suffix.'"'.$attributes.'><h3  id="3" class="monthblog">...</h3></a>'
+					.$this->last_tag_close;
+				}
 		}
 
 		// Render the pages
@@ -249,8 +255,8 @@ class MY_Pagination extends CI_Pagination {
 
 			//membuat titik titik
 
-			if($i < 7){
-				$output .= $this->last_tag_open.'<a class="monthblog-text w-inline-block" href="'.$base_url.$this->prefix.$i.$this->suffix.'"'.$attributes.'><h3  id="' . $loop .'" class="monthblog">...</h3></a>'
+			if($this->cur_page < 9){
+				$output .= $this->last_tag_open.'<a class="monthblog-text w-inline-block" href="'.$base_url.$this->prefix."9".$this->suffix.'"'.$attributes.'><h3  id="9" class="monthblog">...</h3></a>'
 				.$this->last_tag_close;
 			}
 

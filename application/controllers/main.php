@@ -65,7 +65,7 @@ class Main extends CI_Controller {
 		$config["total_rows"] = 12;
 		$config['per_page'] = 1;
 		$config['use_page_numbers'] = TRUE;
-		$config['num_links'] = 1;
+		$config['num_links'] = 2;
 		$config['next_link'] = 'Next';
 		$config['prev_link'] = 'Previous';
 		$config["uri_segment"] = 2;
