@@ -78,6 +78,10 @@ class CI_Pagination {
 	 */
 	protected $total_rows = 0;
 
+	/*
+	CUSTOM PAGINATION
+	*/
+	protected $year = 2017;
 	/**
 	 * Number of links to show
 	 *

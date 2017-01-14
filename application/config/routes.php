@@ -58,6 +58,15 @@ $route['sendmail'] = 'main/sendmail';
 $route['about'] = 'main/about';
 $route['blog'] = 'main/blog';
 $route['contact'] = 'main/contact';
-
+$route['subscribe'] = 'main/subscribe';
+$route['monthblog_refresh/(:num)'] = 'main/monthblog_refresh';
 $route['blog/(:num)'] = 'main/blog/$1';
 $route['view_blog/(:any)'] = 'main/view_blog/$1';
+$route['view_blog'] = 'main/view_blog/1';
+
+$route['cp'] = 'controlpanel/index';
+$route['home'] = 'controlpanel/home';
+$route['login'] = 'controlpanel/login';
+$route['logout'] = 'controlpanel/logout';
+
+$route['cp/update/home'] = 'controlpanel/update_home';

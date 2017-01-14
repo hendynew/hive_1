@@ -18,7 +18,7 @@
 <body>
   <div class="navbar w-nav" data-animation="over-left" data-collapse="all" data-duration="400">
     <div class="w-container">
-      <a class="navbarlogo w-nav-brand" href="<?php echo base_url()?>resources/index.html"><img src="<?php echo base_url()?>resources/images/EdwinLogo_1.png" width="87">
+      <a class="navbarlogo w-nav-brand" href="<?php echo base_url()?>"><img src="<?php echo base_url()?>resources/images/EdwinLogo_1.png" width="87">
       </a>
       <nav class="openmenu w-nav-menu" role="navigation">
         <a class="btnclose w-inline-block" data-ix="new-interaction" href="#"></a>
@@ -47,13 +47,13 @@
         <div class="w-col w-col-6">
           <?php if($post->url_image != ""){ ?>
           <img src="<?php echo base_url()?>resources/images/<?php echo $post->url_image?>">
-          <?php } ?>
+          <?php }else{ ?>
+          <img src="<?php echo base_url()?>resources/images/Images9.jpg"> <?php } ?>
         </div>
         <div class="w-col w-col-6">
           <p class="partextleft"><?php echo $post->post ?></p>
           <div class="divpage">
-            <a class="btnprev w-inline-block" href="#"></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">1</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">2</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">3</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="h4 page-number">4</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">...</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">10</h3></a>
-            <a class="btnnext btnprev w-inline-block" href="#"></a>
+            <?= $link ?>
           </div>
           <a class="btnback w-inline-block" href="<?php echo base_url()?>blog"></a>
         </div>

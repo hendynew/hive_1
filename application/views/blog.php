@@ -44,12 +44,12 @@
       <h1 class="txt-tradingonline">BLOG</h1>
       <div class="blog div-red-divider"><img src="<?php echo base_url()?>resources/images/garismerah-34.png" width="118">
       </div>
-      <a class="btn-latestblog w-inline-block" href="#">
+      <a class="btn-latestblog w-inline-block" href="<?=base_url()?>view_blog/latest">
         <div class="txt-checkout">Check Out My
           <br>Latest Blog Post</div>
       </a>
       <div class="div-month-blog" data-year="2017">
-        <?= echo $link; ?>
+        <?= $link; ?>
       </div>
 
       <a class="btn-prev-blog-posts mobile w-inline-block" href="#">
@@ -57,13 +57,13 @@
       </a>
       <div class="div-blogs w-clearfix">
         <div class="colblogs w-row">
-          <?php for($i=0; $i < sizeof($posts); $i++){?>
+          <?php foreach($posts as $p){?>
             <div class="colblogpost w-col w-col-4">
-              <a class="blogpost linkblogpost w-inline-block" href="<?php echo base_url()?>view_blog/<?= $posts[$i]['post_id'] ?>">
-                <div class="thumbnail"><img src="<?php echo base_url()?>resources/images/<?= ($posts[$i]['url_image'] != "" ? $posts[$i]['url_image'] : "Images9.jpg")?>">
+              <a class="blogpost linkblogpost w-inline-block" href="<?php echo base_url()?>view_blog/<?= $p->post_id ?>">
+                <div class="thumbnail"><img src="<?php echo base_url()?>resources/images/<?= ($p->url_image != "" ? $p->url_image : "Images9.jpg")?>">
                 </div>
-                <h2 class="head-blog-post"><?= $posts[$i]['date']?></h2>
-                <h2 class="head-blog-post title"><?= $posts[$i]['title']?></h2>
+                <h2 class="head-blog-post"><?= $p->date?></h2>
+                <h2 class="head-blog-post title"><?= $p->title?></h2>
               </a>
             </div>
           <?php
@@ -75,30 +75,7 @@
       </div>
       </div><a class="btn-prev-blog-posts w-inline-block" href="#"><h4 class="btn-prev-blog-posts head w-hidden-small w-hidden-tiny">p<br>r<br>e<br>v</h4></a><a class="btn-next-prev-blog btn-prev-blog-posts w-inline-block" href="#"><h4 class="btn-prev-blog-posts head w-hidden-small w-hidden-tiny">n<br>e<br>x<br>t</h4></a>
   </div>
-  <div class="footer-section">
-    <div class="footer-container w-container">
-      <div class="w-row">
-        <div class="w-clearfix w-col w-col-8"><img class="logo moblogo" src="<?php echo base_url()?>/resources/images/EdwinLogo_2.png" width="91"><img class="tandatangan" sizes="(max-width: 479px) 100vw, (max-width: 767px) 142px, 235px" src="<?php echo base_url()?>/resources/images/EdwinLogo_3.png" srcset="<?php echo base_url()?>/resources/images/EdwinLogo_3-p-500x87.png 500w, images/EdwinLogo_3.png 528w" width="258">
-          <div class="divsosmed w-clearfix">
-            <a class="linkinstagram w-inline-block" href="#"><img src="<?php echo base_url()?>/resources/images/icon5.png" width="27.5">
-            </a>
-            <a class="linkinstagram w-inline-block" href="#"><img src="<?php echo base_url()?>/resources/images/icon6.png" width="27.5">
-            </a>
-            <a class="linkinstagram w-inline-block" href="#"><img src="<?php echo base_url()?>/resources/images/icon7.png" width="27.5">
-            </a>
-          </div>
-        </div>
-        <div class="w-col w-col-4">
-          <div class="divtelp"><img class="phoneicon" src="<?php echo base_url()?>/resources/images/icon8.png" width="22">
-            <div class="phonetext">(+6281) 7778899</div>
-          </div>
-          <div class="divemail"><img class="emailico" src="<?php echo base_url()?>/resources/images/icon9.png" width="26">
-            <div class="email phonetext">edwinprasetyo@gmail.com</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <?php include("include/footer-edwin.php") ?>
   <style> .lSAction > a{background-image: url('<?= base_url()?>resources/images/controls.png');}</style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
   <script src="<?php echo base_url()?>/resources/js/webflow.js" type="text/javascript"></script>

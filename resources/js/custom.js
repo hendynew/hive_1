@@ -42,10 +42,10 @@ $(document).ready(function(){
     ]
   });
 
-  $(".monthblog").click(function(){
-    var month = this.id;
+  $(".monthblog-text").click(function(){
+    var month = this.children[0].id;
     var year = $(".div-month-blog").data("year");
-    //window.location= window.location.hostname + window.location. + "/blog/" + month + "/" + year;
+    var url = "/hive_1/monthblog_refresh/"+ month;
   });
 
   $(".btnnext").click(function(){
@@ -57,8 +57,15 @@ $(document).ready(function(){
     monthBlogOnClick(target);
   });
 
-  $(".send").click(function(){
-    alert("test");
+  $("#subscribe").click(function(){
+    var email = $("#Email-2").val();
+    var url = window.location.href + "subscribe";
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: {"Email":email},
+      success:function(){$(".w-form-done").slideDown();}
+    });
   });
 });
 

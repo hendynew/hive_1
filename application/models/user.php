@@ -7,6 +7,10 @@ class User extends CI_Model {
 		$this->load->database();
 	}
 
+	public function get(){
+		return $this->db->select("email,telp")->get("user")->row();
+	}
+
 	public function login($username, $pass)
 	{
 		$arr = [

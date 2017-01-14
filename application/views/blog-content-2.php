@@ -48,17 +48,21 @@
   <div class="sec-blog-text">
     <div class="par-text-about w-row">
       <div class="w-col w-col-6">
-        <p class="partextleft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          <br>
-          <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <?php
+        $part1 = $post->post;
+        $part2 ="";
+        $div = strlen($post->post) / 2;
+        if(strlen($part1) > 500){
+          $part1 = substr($post->post,0,$div);
+          $part2 = substr($post->post,$div);
+        }
+        ?>
+        <p class="partextleft"><?=$part1?></p>
       </div>
       <div class="w-col w-col-6">
-        <p class="partextleft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          <br>
-          <br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <p class="partextleft"><?=$part2?></p>
         <div class="divpage">
-          <a class="btnprev w-inline-block" href="#"></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">1</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">2</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">3</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">4</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">...</h3></a><a class="btnpage w-inline-block" href="#"><h3 class="page-number">10</h3></a>
-          <a class="btnnext btnprev w-inline-block" href="#"></a>
+          <?= $link ?>
         </div>
         <a class="btnback w-inline-block" href="<?= base_url()?>blog"></a>
       </div>

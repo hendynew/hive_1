@@ -21,6 +21,14 @@ class Post extends CI_Model {
 		return $hasil;
 	}
 
+	public function view_post_month($month,$year){
+		$hasil = $this->db->query("SELECT * FROM post WHERE DATE(date) BETWEEN '" . $year . '-' . $month . "-01' AND '" . $year . '-' . $month . "-31'")->result();
+		foreach($hasil as $h){
+			$h->date = $this->change_format_date($h->date);
+		}
+		return $hasil;
+	}
+
 	public function change_format_date($date){
 		return date("l, d.m.y",strtotime($date));
 	}
