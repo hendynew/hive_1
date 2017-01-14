@@ -38,10 +38,20 @@ $(document).ready(function(){
 
             },{
                 type: 'success',
-                timer: 4000
+                timer: 2000
             });
         }
       }
     });
+  });
+
+  $(".scroll").on("click", function( e ) {
+
+    e.preventDefault();
+
+    $("body, html").animate({
+      scrollTop: $( $(this).attr('href') ).offset().top
+    }, 600);
+
   });
 });

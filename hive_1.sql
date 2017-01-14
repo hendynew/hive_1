@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2017 at 08:57 PM
+-- Generation Time: Jan 14, 2017 at 03:19 AM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -19,6 +19,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `hive_1`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `home_content_2`
+--
+
+CREATE TABLE IF NOT EXISTS `home_content_2` (
+  `id_content` varchar(5) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
+  `url_image` varchar(255) NOT NULL,
+  `status` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `home_content_2`
+--
+
+INSERT INTO `home_content_2` (`id_content`, `title`, `content`, `url_image`, `status`) VALUES
+('1', 'KEBEBASAN WAKTU', 'Online trading dapat dilakukan kapan saja dan di mana saja. Trader dapat melakukan trading dalam kurun waktu 24 jam.', 'icon1.png', '1'),
+('2', 'MURAH &amp; MUDAH', 'Online trading mudah dilakukan, pelakunya hanya memerlukan gadget. Tidak perlu lokasi yang strategis maupun biaya promosi. Hal ini juga membuat biaya operasional online trading jadi relatif lebih kecil.', 'icon2.png', '1'),
+('3', 'LEBIH AMAN', 'Online trading dianggap lebih aman karena dilakukan sendiri dan setiap account memiliki tiga tingkat keamanan, yaitu username dan dua buah password.', 'icon3.png', '1'),
+('4', 'KEUNTUNGAN 100%', 'Dalam trading, keuntungan 100% menjadi milik trader, bukan broker, perusahaan sekuritas, atau lainnya. Bahkan, saat pasar sedang bagus-bagusnya, keuntungan dapat mencapai lebih dari 100%.', 'icon4.png', '1');
 
 -- --------------------------------------------------------
 
@@ -53,6 +77,90 @@ INSERT INTO `message` (`id_message`, `name`, `email`, `message`, `status`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `page_about`
+--
+
+CREATE TABLE IF NOT EXISTS `page_about` (
+  `id_content` varchar(5) NOT NULL,
+  `title1` varchar(255) NOT NULL,
+  `caption1` mediumtext NOT NULL,
+  `content1` longtext NOT NULL,
+  `title2` varchar(255) NOT NULL,
+  `title3` varchar(255) NOT NULL,
+  `content2` longtext NOT NULL,
+  `url_image` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_content`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `page_about`
+--
+
+INSERT INTO `page_about` (`id_content`, `title1`, `caption1`, `content1`, `title2`, `title3`, `content2`, `url_image`) VALUES
+('1', 'TRADING MENURUT EDWIN', 'Percayakah Anda bila saya mengakatan bahwa dalam satu hari Anda dapat melakukan hingga belasan kegiatan trading? Ya, trading adalah sesuatu yang tidak dapat terlepas dari kehidupan kita.', '\r\n\r\nSetiap harinya setiap orang pasti melakukan trading. Trading pun tidak selamanya terjadi dalam skala yang besar. Membeli makanan, membayar parkir, atau bahkan pada saat Anda menerima gaji sebenarnya sudah merupakan kegiatan trading.\r\n\r\nSecara singkat, trading berarti konsep ekonomi dasar yang melibatkan jual beli barang atau jasa, dengan kompensasi yang dibayarkan oleh pembeli kepada penjual, atau pertukaran dari barang maupun jasa dari kedua pihak. Trading sendiri lebih sering digunakan oleh kebanyakan dari kita untuk\r\n\r\nmemperoleh keuntungan, sehingga secara umum  trading dapat terbagi menjadi 2 jenis, yaitu ruang dan waktu. Mudahnya, trading ruang adalah kegiatan dagang yang terjadi ketika Anda membeli handphone di Hongkong dan menjualnya kembali di Indonesia. Sementara itu trading waktu terjadi ketika Anda membeli beras pada saat musim panen dan menjualnya pada saat musim tanam (non-panen).\r\n\r\nDari sisi historis, trading sebenarnya sudah ada dari zaman dahulu kala. ‘Barter’ mungkin adalah istilah yang lebih familiar di telinga Anda.\r\n', 'about', 'EDWIN', 'Edwin Prasetyo telah bergelut dalam dunia trading sejak masih belia. Mengikuti jejak orang tua nya di trading konvensional, Edwin kini juga menyeriusi karirnya di trading online. Keseriusannya   terhadap trading online diawali dengan penelusuran konseptual yang  tepat  dan diaplikasikan dalam praktik tradingnya. Bagi Edwin,memulai trading bukan hanya karena modal dana, namun juga pemahaman kita atas praktik industri yang digeluti, serta passion kita untuk terus mengeksplorasi industri tersebut. Untuk itu, Edwin pergi untuk belajar ke ahli-ahli  trading  dari  berbagai penjuru dunia. Tidak sia-sia, perjuangan Edwin akhirnya membuahkan hasil.', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `page_home`
+--
+
+CREATE TABLE IF NOT EXISTS `page_home` (
+  `id_change` varchar(5) NOT NULL,
+  `hero` varchar(255) NOT NULL,
+  `hero2` varchar(255) NOT NULL,
+  `hero3` varchar(255) NOT NULL,
+  `hero4` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `url_image_hero` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `title2` varchar(255) NOT NULL,
+  `content` longtext NOT NULL,
+  `url_image_bg2` varchar(255) NOT NULL,
+  `title3` varchar(255) NOT NULL,
+  `title4` varchar(255) NOT NULL,
+  `title5` varchar(255) NOT NULL,
+  `title6` varchar(255) NOT NULL,
+  `content6` longtext NOT NULL,
+  `url_image_bg3` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_change`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `page_home`
+--
+
+INSERT INTO `page_home` (`id_change`, `hero`, `hero2`, `hero3`, `hero4`, `name`, `url_image_hero`, `title`, `title2`, `content`, `url_image_bg2`, `title3`, `title4`, `title5`, `title6`, `content6`, `url_image_bg3`) VALUES
+('1', 'learn', 'from everyone', 'follow', 'no one', 'Edwin Prasetyo', '', 'Pentingnya', 'TRADING ONLINE', 'Di era modern ini, seluruh kegiatan kita lakukan secara online. Begitu juga dengan trading. Online trading menjadi sangat menarik di era serba digital ini karena berhasil menggabungkan konsep trading ruang dan waktu secara bersamaan. Internet membuat online trading memiliki lingkup internasional sehingga memungkinkan adanya penjual & pembeli setiap waktu. Sayangnya tidak adanya batas online trading ini justru mendatangkan tantangan baru bagi kita, pelakunya. Namun, orang tetap dapat bertahan di dunia online trading jika didukung dengan skill, pengalaman, serta analisa yang baik.', '', 'KEUNGGULAN ONLINE TRADING', 'Ingin Bertrading Bersama Edwin?', 'PARTNERS', 'STAY UPDATED', 'Sign up for our newsletter to get the latest news,\nannouncements, <br>special offers and event information', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `partner`
+--
+
+CREATE TABLE IF NOT EXISTS `partner` (
+  `id_content` varchar(5) NOT NULL,
+  `url_image` varchar(255) NOT NULL,
+  `since` varchar(255) NOT NULL,
+  `status` varchar(1) NOT NULL,
+  PRIMARY KEY (`id_content`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `partner`
+--
+
+INSERT INTO `partner` (`id_content`, `url_image`, `since`, `status`) VALUES
+('1', 'ClientLogo_1.png', 'Sejak 2011', '1'),
+('2', 'ClientLogo_2.png', 'Sejak 2011', '1'),
+('3', 'ClientLogo_3.png', 'Sejak 2011', '1'),
+('4', 'ClientLogo_4.png', 'Sejak 2011', '1'),
+('5', 'ClientLogo_5.png', 'Sejak 2011', '1');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `post`
 --
 
@@ -72,11 +180,11 @@ CREATE TABLE IF NOT EXISTS `post` (
 --
 
 INSERT INTO `post` (`post_id`, `title`, `date`, `caption`, `post`, `url_image`, `status`) VALUES
-(1, 'Ekonomi dan Dunia', '2017-01-03', '', 'halo semua', '', '1'),
-(2, 'Sistem Manajemen', '2017-01-05', '', 'hahah', '', '1'),
-(3, 'Te amo.', '2017-01-09', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'Images8.jpg', '1'),
-(4, 'Superman is Dead', '2017-01-09', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', '', '1'),
-(5, 'Lorem Ipsum', '2017-01-09', 'Lorem Lorem ipsum', 'Lorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsumLorem Lorem ipsum', '', '1');
+(1, 'Lorem Ipsum', '2017-01-03', '', ' Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id luctus diam, consectetur finibus mi. Curabitur commodo leo neque, at feugiat nisi dictum a. Fusce egestas, ante vitae gravida vehicula, odio leo pretium est, eu cursus nibh tortor nec augue. Donec lectus felis, dapibus ac ipsum quis, ultrices varius nunc. Ut quis dapibus arcu. Etiam dictum ullamcorper cursus. Nunc non pulvinar purus. Praesent a lacus neque. Quisque congue est ut euismod viverra.\n\nProin et fringilla magna. Donec elit massa, bibendum quis molestie eget, interdum ut ex. Proin mattis in neque a convallis. Aliquam convallis, justo quis elementum imperdiet, odio leo euismod dolor, eu interdum urna tortor eu arcu. Aenean facilisis, mi in varius tristique, nisi metus eleifend sem, quis egestas turpis magna vitae metus. Nam sodales, augue at suscipit bibendum, dui orci laoreet nunc, eget bibendum metus ex viverra sem. Maecenas pretium faucibus diam. Pellentesque fringilla mattis ', '', '1'),
+(2, 'Dari mana saya bisa mendapatkannya?', '2017-01-05', '', 'Ada banyak variasi tulisan Lorem Ipsum yang tersedia, tapi kebanyakan sudah mengalami perubahan bentuk, entah karena unsur humor atau kalimat yang diacak hingga nampak sangat tidak masuk akal. Jika anda ingin menggunakan tulisan Lorem Ipsum, anda harus yakin tidak ada bagian yang memalukan yang tersembunyi di tengah naskah tersebut. Semua generator Lorem Ipsum di internet cenderung untuk mengulang bagian-bagian tertentu. Karena itu inilah generator pertama yang sebenarnya di internet. Ia menggunakan kamus perbendaharaan yang terdiri dari 200 kata Latin, yang digabung dengan banyak contoh struktur kalimat untuk menghasilkan Lorem Ipsun yang nampak masuk akal. Karena itu Lorem Ipsun yang dihasilkan akan selalu bebas dari pengulangan, unsur humor yang sengaja dimasukkan, kata yang tidak sesuai dengan karakteristiknya dan lain sebagainya.', '', '1'),
+(3, 'Dari mana asalnya?', '2017-01-09', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat', 'Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih dari 2000 tahun. Richard McClintock, seorang professor Bahasa Latin dari Hampden-Sidney College di Virginia, mencoba mencari makna salah satu kata latin yang dianggap paling tidak jelas, yakni consectetur, yang diambil dari salah satu bagian Lorem Ipsum. Setelah ia mencari maknanya di di literatur klasik, ia mendapatkan sebuah sumber yang tidak bisa diragukan. Lorem Ipsum berasal dari bagian 1.10.32 dan 1.10.33 dari naskah "de Finibus Bonorum et Malorum" (Sisi Ekstrim dari Kebaikan dan Kejahatan) karya Cicero, yang ditulis pada tahun 45 sebelum masehi. BUku ini adalah risalah dari teori etika yang sangat terkenal pada masa Renaissance. Baris pertama dari Lorem Ipsum, "Lorem ipsum dolor sit amet..", berasal dari sebuah baris di bagian 1.10.32.', 'Images8.jpg', '1'),
+(4, 'Mengapa kita menggunakannya?', '2017-02-10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do ', 'Sudah merupakan fakta bahwa seorang pembaca akan terpengaruh oleh isi tulisan dari sebuah halaman saat ia melihat tata letaknya. Maksud penggunaan Lorem Ipsum adalah karena ia kurang lebih memiliki penyebaran huruf yang normal, ketimbang menggunakan kalimat seperti "Bagian isi disini, bagian isi disini", sehingga ia seolah menjadi naskah Inggris yang bisa dibaca. Banyak paket Desktop Publishing dan editor situs web yang kini menggunakan Lorem Ipsum sebagai contoh teks. Karenanya pencarian terhadap kalimat "Lorem Ipsum" akan berujung pada banyak situs web yang masih dalam tahap pengembangan. Berbagai versi juga telah berubah dari tahun ke tahun, kadang karena tidak sengaja, kadang karena disengaja (misalnya karena dimasukkan unsur humor atau semacamnya)', '', '1'),
+(5, 'Apakah Lorem Ipsum itu?', '2017-03-22', 'Lorem Lorem ipsum', 'Lorem Ipsum adalah contoh teks atau dummy dalam industri percetakan dan penataan huruf atau typesetting. Lorem Ipsum telah menjadi standar contoh teks sejak tahun 1500an, saat seorang tukang cetak yang tidak dikenal mengambil sebuah kumpulan teks dan mengacaknya untuk menjadi sebuah buku contoh huruf. Ia tidak hanya bertahan selama 5 abad, tapi juga telah beralih ke penataan huruf elektronik, tanpa ada perubahan apapun. Ia mulai dipopulerkan pada tahun 1960 dengan diluncurkannya lembaran-lembaran Letraset yang menggunakan kalimat-kalimat dari Lorem Ipsum, dan seiring munculnya perangkat lunak Desktop Publishing seperti Aldus PageMaker juga memiliki versi Lorem Ipsum.', '', '1');
 
 -- --------------------------------------------------------
 
@@ -90,6 +198,16 @@ CREATE TABLE IF NOT EXISTS `subscriber` (
   PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `subscriber`
+--
+
+INSERT INTO `subscriber` (`email`, `status`) VALUES
+('hendylukas68@gmail.com', '1'),
+('hendylukas68a@gmail.com', '1'),
+('tes@gmail.com', '1'),
+('test@gmail.com', '1');
+
 -- --------------------------------------------------------
 
 --
@@ -101,6 +219,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(255) NOT NULL,
   `password` varchar(15) NOT NULL,
   `name` varchar(50) NOT NULL,
+  `telp` varchar(20) NOT NULL,
   `status` varchar(1) NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -109,8 +228,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`username`, `email`, `password`, `name`, `status`) VALUES
-('admin', 'hendylukas68@gmail.com', 'admin', 'Administrator', '1');
+INSERT INTO `user` (`username`, `email`, `password`, `name`, `telp`, `status`) VALUES
+('admin', 'edwinprasetyo@gmail.com', 'admin', 'Administrator', '(+6281) 7778899', '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

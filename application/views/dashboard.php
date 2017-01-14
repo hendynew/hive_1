@@ -37,10 +37,12 @@
 						<div class="col-md-8">
 								<div class="card">
 										<div class="header">
-												<h4 class="title">Home Page</h4>
+												<h3 class="title">Home Page</h3>
 										</div>
 										<div class="content">
 												<?= form_open_multipart("cp/update/home","class=form")?>
+														<br>
+														<h4> <a id="headline">Headline </a> </h4>
 														<div class="row">
 																<div class="col-md-3">
 																		<div class="form-group">
@@ -83,6 +85,8 @@
 															</div>
 														</div>
 
+														<hr>
+														<h4> <a id="bodyline">Bodyline 1</a> </h4>
 														<div class="row">
 																<div class="col-md-6">
 																		<div class="form-group">
@@ -106,7 +110,8 @@
 																		</div>
 																</div>
 														</div>
-
+														<hr>
+														<h4> <a id="fitur">Fitur dan Keunggulan</a> </h4>
 														<div class="row">
 																<div class="col-md-4">
 																		<div class="form-group">
@@ -131,7 +136,7 @@
 																	</div>
 																	<div class="col-md-3">
 																		<div class="form-group">
-																				<label>Icon 1 </label>
+																				<label>Icon <?=$c2->id_content?> </label>
 																				<input type="file" name="userfile" size="20" />
 																		</div>
 																	</div>
@@ -151,7 +156,8 @@
 																		</div>
 																</div>
 														</div>
-
+														<hr>
+														<h4> <a id="subscribe">Subscribe</a> </h4>
 														<div class="row">
 																<div class="col-md-8">
 																		<div class="form-group">
@@ -173,33 +179,34 @@
 								</div>
 						</div>
 						<div class="col-md-4">
-								<div class="card card-user">
-										<div class="image">
-												<img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="..."/>
-										</div>
-										<div class="content">
-												<div class="author">
-														 <a href="#">
-														<img class="avatar border-gray" src="assets/img/faces/face-3.jpg" alt="..."/>
-
-															<h4 class="title">Mike Andrew<br />
-																 <small>michael24</small>
-															</h4>
-														</a>
-												</div>
-												<p class="description text-center"> "Lamborghini Mercy <br>
-																						Your chick she so thirsty <br>
-																						I'm in that two seat Lambo"
-												</p>
-										</div>
-										<hr>
-										<div class="text-center">
-												<button href="#" class="btn btn-simple"><i class="fa fa-facebook-square"></i></button>
-												<button href="#" class="btn btn-simple"><i class="fa fa-twitter"></i></button>
-												<button href="#" class="btn btn-simple"><i class="fa fa-google-plus-square"></i></button>
-
-										</div>
-								</div>
+							<div class="sidebar-wrapper" data-color="blue" data-image="assets/img/sidebar-5.jpg">
+								<ul class="nav">
+										<li>
+												<a class="scroll" href="headline">
+														<i class="pe-7s-home"></i>
+														<p>Headline</p>
+												</a>
+										</li>
+										<li>
+												<a href="#">
+														<i class="pe-7s-user"></i>
+														<p>Bodyline 1</p>
+												</a>
+										</li>
+										<li>
+												<a href="#">
+														<i class="pe-7s-note2"></i>
+														<p>Fitur dan Keunggulan</p>
+												</a>
+										</li>
+										<li>
+												<a href="#">
+														<i class="pe-7s-users"></i>
+														<p>Subscribe</p>
+												</a>
+										</li>
+								</ul>
+							</div>
 						</div>
 
 				</div>
