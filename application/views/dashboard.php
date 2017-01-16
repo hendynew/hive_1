@@ -34,7 +34,7 @@
 <div class="content">
 		<div class="container-fluid">
 				<div class="row">
-						<div class="col-md-8">
+						<div class="col-md-10">
 								<div class="card">
 										<div class="header">
 												<h3 class="title">Home Page</h3>
@@ -178,29 +178,29 @@
 										</div>
 								</div>
 						</div>
-						<div class="col-md-4">
-							<div class="sidebar-wrapper" data-color="blue" data-image="assets/img/sidebar-5.jpg">
+						<div class="col-md-2">
+							<div class="sidebar-wrapper" data-color="orange" data-image="assets/img/sidebar-5.jpg" style="position:fixed">
 								<ul class="nav">
 										<li>
-												<a class="scroll" href="headline">
+												<a class="" href="#headline">
 														<i class="pe-7s-home"></i>
 														<p>Headline</p>
 												</a>
 										</li>
 										<li>
-												<a href="#">
+												<a href="#bodyline" >
 														<i class="pe-7s-user"></i>
 														<p>Bodyline 1</p>
 												</a>
 										</li>
 										<li>
-												<a href="#">
+												<a href="#fitur">
 														<i class="pe-7s-note2"></i>
 														<p>Fitur dan Keunggulan</p>
 												</a>
 										</li>
 										<li>
-												<a href="#">
+												<a href="#subscribe">
 														<i class="pe-7s-users"></i>
 														<p>Subscribe</p>
 												</a>

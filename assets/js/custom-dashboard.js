@@ -46,12 +46,9 @@ $(document).ready(function(){
   });
 
   $(".scroll").on("click", function( e ) {
-
     e.preventDefault();
-
     $("body, html").animate({
-      scrollTop: $( $(this).attr('href') ).offset().top
+      scrollTop: $( "#headline" ).offset().top
     }, 600);
-
   });
 });
