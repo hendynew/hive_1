@@ -566,6 +566,8 @@ a {
   overflow: hidden;
   width: auto;
   height: auto;
+  max-width: 125px;
+  max-height: 80px;
 }
 
 .navbar {

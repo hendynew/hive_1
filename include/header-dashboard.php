@@ -9,7 +9,7 @@
 		<div class="sidebar-wrapper">
 					<div class="logo">
 							<a href="<?=base_url()?>cp" class="simple-text">
-									Hendy CP
+									Hive
 							</a>
 					</div>
 
@@ -53,7 +53,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Dashboard</a>
+                    <a class="navbar-brand" href="#"><?= $page?></a>
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-left">

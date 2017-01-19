@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 14, 2017 at 03:19 AM
+-- Generation Time: Jan 19, 2017 at 03:32 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -107,11 +107,6 @@ INSERT INTO `page_about` (`id_content`, `title1`, `caption1`, `content1`, `title
 
 CREATE TABLE IF NOT EXISTS `page_home` (
   `id_change` varchar(5) NOT NULL,
-  `hero` varchar(255) NOT NULL,
-  `hero2` varchar(255) NOT NULL,
-  `hero3` varchar(255) NOT NULL,
-  `hero4` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
   `url_image_hero` varchar(255) NOT NULL,
   `title` varchar(255) NOT NULL,
   `title2` varchar(255) NOT NULL,
@@ -130,8 +125,8 @@ CREATE TABLE IF NOT EXISTS `page_home` (
 -- Dumping data for table `page_home`
 --
 
-INSERT INTO `page_home` (`id_change`, `hero`, `hero2`, `hero3`, `hero4`, `name`, `url_image_hero`, `title`, `title2`, `content`, `url_image_bg2`, `title3`, `title4`, `title5`, `title6`, `content6`, `url_image_bg3`) VALUES
-('1', 'learn', 'from everyone', 'follow', 'no one', 'Edwin Prasetyo', '', 'Pentingnya', 'TRADING ONLINE', 'Di era modern ini, seluruh kegiatan kita lakukan secara online. Begitu juga dengan trading. Online trading menjadi sangat menarik di era serba digital ini karena berhasil menggabungkan konsep trading ruang dan waktu secara bersamaan. Internet membuat online trading memiliki lingkup internasional sehingga memungkinkan adanya penjual & pembeli setiap waktu. Sayangnya tidak adanya batas online trading ini justru mendatangkan tantangan baru bagi kita, pelakunya. Namun, orang tetap dapat bertahan di dunia online trading jika didukung dengan skill, pengalaman, serta analisa yang baik.', '', 'KEUNGGULAN ONLINE TRADING', 'Ingin Bertrading Bersama Edwin?', 'PARTNERS', 'STAY UPDATED', 'Sign up for our newsletter to get the latest news,\nannouncements, <br>special offers and event information', '');
+INSERT INTO `page_home` (`id_change`, `url_image_hero`, `title`, `title2`, `content`, `url_image_bg2`, `title3`, `title4`, `title5`, `title6`, `content6`, `url_image_bg3`) VALUES
+('1', '', 'Pentingnya', 'TRADING ONLINE', 'Di era modern ini, seluruh kegiatan kita lakukan secara online. Begitu juga dengan trading. Online trading menjadi sangat menarik di era serba digital ini karena berhasil menggabungkan konsep trading ruang dan waktu secara bersamaan. Internet membuat online trading memiliki lingkup internasional sehingga memungkinkan adanya penjual &amp; pembeli setiap waktu. Sayangnya tidak adanya batas online trading ini justru mendatangkan tantangan baru bagi kita, pelakunya. Namun, orang tetap dapat bertahan di dunia online trading jika didukung dengan skill, pengalaman, serta analisa yang baik.', '', 'KEUNGGULAN ONLINE TRADING', 'Ingin Bertrading Bersama Edwin?', 'PARTNERS', 'STAY UPDATED', 'Sign up for our newsletter to get the latest news,\n        <br>announcements, special offers and event information', '');
 
 -- --------------------------------------------------------
 

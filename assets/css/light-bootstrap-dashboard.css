@@ -3391,3 +3391,24 @@ body > .navbar-collapse[data-color="purple"]:after {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+.right-bar li, .right-bar ul{
+  background-color: white;
+  color: red;
+}
+
+.item1{
+  background-color: #468966;
+}
+
+.item2{
+  background-color: #FFF05A;
+}
+
+.item3{
+  background-color: #8E2800;
+}
+
+.item4{
+  background-color: #B64926;
+}

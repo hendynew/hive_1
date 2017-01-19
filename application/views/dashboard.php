@@ -26,6 +26,8 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
 
+		<script src="//cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
+
 </head>
 <body>
 
@@ -36,55 +38,17 @@
 				<div class="row">
 						<div class="col-md-10">
 								<div class="card">
-										<div class="header">
-												<h3 class="title">Home Page</h3>
-										</div>
 										<div class="content">
 												<?= form_open_multipart("cp/update/home","class=form")?>
-														<br>
 														<h4> <a id="headline">Headline </a> </h4>
 														<div class="row">
-																<div class="col-md-3">
-																		<div class="form-group">
-																				<label>Hero 1 </label>
-																				<input id="hero1" type="text" class="form-control" value=<?=$home->hero?>>
-																		</div>
-																</div>
-																<div class="col-md-3">
-																		<div class="form-group">
-																				<label>Hero 2 </label>
-																				<input id="hero2" type="text" class="form-control" value="<?=$home->hero2?>">
-																		</div>
-																</div>
-																<div class="col-md-3">
-																		<div class="form-group">
-																				<label>Hero 3 </label>
-																				<input id="hero3" type="text" class="form-control" value="<?=$home->hero3?>">
-																		</div>
-																</div>
-																<div class="col-md-3">
-																		<div class="form-group">
-																				<label>Hero 4 </label>
-																				<input id="hero4" type="text" class="form-control" value="<?=$home->hero4?>">
-																		</div>
-																</div>
-														</div>
-
-														<div class="row">
-															<div class="col-md-3">
-																	<div class="form-group">
-																			<label>Name </label>
-																			<input id="name" type="text" class="form-control" value="<?=$home->name?>">
-																	</div>
-															</div>
 															<div class="col-md-3">
 																<div class="form-group">
-																		<label>Background Hero </label>
-																		<input type="file" name="userfile" size="20" />
+																		<label>Background Headline </label>
+																		<input type="file" name="herofile" size="20" />
 																</div>
 															</div>
 														</div>
-
 														<hr>
 														<h4> <a id="bodyline">Bodyline 1</a> </h4>
 														<div class="row">
@@ -106,7 +70,11 @@
 																<div class="col-md-12">
 																		<div class="form-group">
 																				<label>Content 1</label>
-																				<textarea id="content"  rows="5" class="form-control" placeholder="Here can be your description" value=""><?=$home->content?></textarea>
+																				<textarea name="edit1" id="content"><?= $home->content?></textarea>
+																				<script>
+            															CKEDITOR.replace( 'edit1' );
+        																</script>
+
 																		</div>
 																</div>
 														</div>
@@ -115,7 +83,7 @@
 														<div class="row">
 																<div class="col-md-4">
 																		<div class="form-group">
-																				<label>Title 3</label>
+																				<label>Title</label>
 																				<input id="title3" type="text" class="form-control" placeholder="City" value="<?=$home->title3?>">
 																		</div>
 																</div>
@@ -128,18 +96,25 @@
 																					<input id="c2-title1" type="text" class="form-control" placeholder="City" value="<?=$c2->title?>">
 																			</div>
 																	</div>
-																	<div class="col-md-6">
-																			<div class="form-group">
-																					<label>Item <?=$c2->id_content?></label>
-																					<textarea id="c2-content1" rows="5" class="form-control" placeholder="Here can be your description" value="Mike"><?=$c2->content?></textarea>
-																			</div>
-																	</div>
 																	<div class="col-md-3">
 																		<div class="form-group">
 																				<label>Icon <?=$c2->id_content?> </label>
 																				<input type="file" name="userfile" size="20" />
 																		</div>
 																	</div>
+															</div>
+															<div class="row">
+																<div class="col-md-12">
+																		<div class="form-group">
+																				<label>Item <?=$c2->id_content?></label>
+																				<textarea name="editc<?= $c2->id_content?>" id="c2-content<?=$c2->id_content?>"><?=$c2->content?></textarea>
+																				<script>
+																					var id = '<?= $c2->id_content?>';
+																					CKEDITOR.replace( 'editc' + id );
+																				</script>
+																				<!--textarea id="c2-content1" rows="5" class="form-control" placeholder="Here can be your description" value="Mike"><?=$c2->content?></textarea> -->
+																		</div>
+																</div>
 															</div>
 														<?php } ?>
 														<div class="row">
@@ -149,58 +124,65 @@
 																				<input id="title5" type="text" class="form-control" placeholder="City" value="<?=$home->title5?>">
 																		</div>
 																</div>
-																<div class="col-md-6">
-																		<div class="form-group">
-																				<label>Title 6</label>
-																				<input id="title6" type="text" class="form-control" placeholder="City" value="<?=$home->title6?>">
-																		</div>
-																</div>
 														</div>
 														<hr>
 														<h4> <a id="subscribe">Subscribe</a> </h4>
 														<div class="row">
-																<div class="col-md-8">
+															<div class="col-md-6">
+																	<div class="form-group">
+																			<label>Title 6</label>
+																			<input id="title6" type="text" class="form-control" placeholder="City" value="<?=$home->title6?>">
+																	</div>
+															</div>
+															<div class="col-md-4">
+																	<div class="form-group">
+																			<label>Background 6</label>
+																			<input type="file" name="userfile" size="20" />
+																	</div>
+															</div>
+														</div>
+														<div class="row">
+																<div class="col-md-12">
 																		<div class="form-group">
 																				<label>Content 6</label>
-																				<textarea id="content6" rows="5" class="form-control" placeholder="Here can be your description" value="Mike"><?=$home->content6?></textarea>
+																				<textarea name="edit4" id="content6"><?=$home->content6?></textarea>
+																				<script>
+																					CKEDITOR.replace( 'edit4' );
+																				</script>
+																				<!--<textarea id="content6" rows="5" class="form-control" placeholder="Here can be your description" value="Mike"><?=$home->content6?></textarea> -->
 																		</div>
 																</div>
-																<div class="col-md-4">
-																		<div class="form-group">
-																				<label>Background 6</label>
-																				<input type="file" name="userfile" size="20" />
-																		</div>
-																</div>
+
 														</div>
-														<button id="submitHome" type="submit" class="btn btn-info btn-fill pull-right">Update Page</button>
+														<button type="submit" class="btn btn-info btn-fill pull-right submitHome">Update Page</button>
 														<div class="clearfix"></div>
 												</form>
 										</div>
 								</div>
 						</div>
 						<div class="col-md-2">
-							<div class="sidebar-wrapper" data-color="orange" data-image="assets/img/sidebar-5.jpg" style="position:fixed">
-								<ul class="nav">
+							<div class="sidebar-wrapper" data-color="blue" data-image="assets/img/sidebar-5.jpg" style="position:fixed" style="background-color: red">
+								<ul class="nav right-bar">
 										<li>
-												<a class="" href="#headline">
+												<a class="item1" href="#headline">
 														<i class="pe-7s-home"></i>
 														<p>Headline</p>
 												</a>
 										</li>
 										<li>
-												<a href="#bodyline" >
+												<a class="item2" href="#bodyline" >
 														<i class="pe-7s-user"></i>
 														<p>Bodyline 1</p>
 												</a>
 										</li>
 										<li>
-												<a href="#fitur">
+												<a class="item3" href="#fitur">
 														<i class="pe-7s-note2"></i>
 														<p>Fitur dan Keunggulan</p>
 												</a>
 										</li>
 										<li>
-												<a href="#subscribe">
+												<a class="item4" href="#subscribe">
 														<i class="pe-7s-users"></i>
 														<p>Subscribe</p>
 												</a>
@@ -237,6 +219,8 @@
 	<script src="<?= base_url() ?>assets/js/light-bootstrap-dashboard.js"></script>
 
 	<script src="<?= base_url() ?>assets/js/custom-dashboard.js"></script>
+
+	<script src="<?= base_url() ?>assets/js/dropzone.js"></script>
 
 	<script type="text/javascript">
     	$(document).ready(function(){

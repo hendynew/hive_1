@@ -500,7 +500,7 @@ class MY_Pagination extends CI_Pagination {
 					if ($this->cur_page === $loop)
 					{
 						// Current page
-						$output .= $this->cur_tag_open.'<a class="btnpage w-inline-block" href="#"><h3 class="h4 page-number">'.$loop.'</h3></a>'.$this->cur_tag_close;
+						$output .= $this->cur_tag_open.'<a class="btnpage w-inline-block" href="#"><h3 class="h4 page-number monthblog-active">'.$loop.'</h3></a>'.$this->cur_tag_close;
 					}
 					elseif ($i === $base_page)
 					{

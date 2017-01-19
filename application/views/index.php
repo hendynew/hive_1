@@ -30,11 +30,11 @@
   </div>
   <div class="herosection w-clearfix">
     <div class="herotext w-clearfix">
-      <h1 class="heroh1"><?= $home->hero ?></h1><img class="whitedivider" sizes="(max-width: 767px) 50vw, 243px" src="<?php echo base_url("resources/") ?>images/garis-26.jpg" srcset="<?php echo base_url("resources/")?>images/garis-26-p-500x14.jpeg 500w, images/garis-26.jpg 565w" width="243">
-      <h1 class="from heroh1"><?= $home->hero2 ?></h1>
-      <h1 class="follow heroh1"><?= $home->hero3 ?></h1><img class="whitedivider" sizes="(max-width: 479px) 50vw, 238px" src="<?php echo base_url("resources/") ?>images/garis-26.jpg" srcset="<?php echo base_url("resources/")?>images/garis-26-p-500x14.jpeg 500w, images/garis-26.jpg 565w" width="238">
-      <h1 class="heroh1 none"><?= $home->hero4 ?></h1><img class="garisnama" src="<?php echo base_url("resources/") ?>images/garis-27.jpg" width="46">
-      <h3 class="edwinprasetyo"><?= $home->name ?></h3>
+      <h1 class="heroh1">LEARN</h1><img class="whitedivider" sizes="(max-width: 767px) 50vw, 243px" src="<?php echo base_url("resources/") ?>images/garis-26.jpg" srcset="<?php echo base_url("resources/")?>images/garis-26-p-500x14.jpeg 500w, images/garis-26.jpg 565w" width="243">
+      <h1 class="from heroh1">FROM EVERYONE</h1>
+      <h1 class="follow heroh1">FOLLOW</h1><img class="whitedivider" sizes="(max-width: 479px) 50vw, 238px" src="<?php echo base_url("resources/") ?>images/garis-26.jpg" srcset="<?php echo base_url("resources/")?>images/garis-26-p-500x14.jpeg 500w, images/garis-26.jpg 565w" width="238">
+      <h1 class="heroh1 none">NO ONE</h1><img class="garisnama" src="<?php echo base_url("resources/") ?>images/garis-27.jpg" width="46">
+      <h3 class="edwinprasetyo">Edwin Prasetyo</h3>
     </div>
   </div>
   <div class="sec-pentingnya">

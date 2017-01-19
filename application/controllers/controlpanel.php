@@ -48,6 +48,7 @@ class Controlpanel extends CI_Controller {
 		$config['max_height'] = '4000';
 		$this->load->library('upload', $config);
 
+		$data['page'] = "Homepage";
 		$data['home'] = $this->home->load();
 		$data['content2'] = $this->home->load_content_2();
 		$data['content3'] = $this->home->load_content_5();
@@ -55,11 +56,6 @@ class Controlpanel extends CI_Controller {
 	}
 
 	public function update_home(){
-		$data['hero'] = $this->input->post('hero1');
-		$data['hero2'] = $this->input->post('hero2');
-		$data['hero3'] = $this->input->post('hero3');
-		$data['hero4'] = $this->input->post('hero4');
-		$data['name'] = $this->input->post('name');
 		$data['title'] = $this->input->post('title');
 		$data['title2'] = $this->input->post('title2');
 		$data['content'] = $this->input->post('content');
