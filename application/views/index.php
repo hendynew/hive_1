@@ -13,6 +13,22 @@
   <script src="<?php echo base_url("resources/") ?>js/modernizr.js" type="text/javascript"></script>
   <link href="<?php echo base_url("resources/") ?>images/edwin-fav-32.png" rel="shortcut icon" type="image/x-icon">
   <link href="<?php echo base_url("resources/") ?>images/edwin-fav-256.png" rel="apple-touch-icon">
+  <?php
+    echo "<style type='text/css'>";
+    if($home->url_image_hero == ""){
+      echo ".herosection{background-image: url('" . base_url() ."resources/images/Images2.jpg');}";
+    }else {echo ".herosection{background-image: url('" . base_url() ."uploads/". $home->url_image_hero ."');}";}
+
+    if($home->url_image_bg2 == ""){
+      echo ".pentingnyacolleft {background-image: url('" . base_url() ."resources/images/Images3.jpg');}";
+    }else {echo ".pentingnyacolleft {background-image: url('" . base_url() ."uploads/". $home->url_image_bg2 ."');}";}
+
+    if($home->url_image_bg3 == ""){
+      echo ".sec-stayupdated {background-image: url('" . base_url() ."resources/images/Images4.jpg');}";
+    }else {echo ".sec-stayupdated {background-image: url('" . base_url() ."uploads/". $home->url_image_bg3 ."');}";}
+
+    echo "</style>";
+  ?>
 </head>
 <body>
   <div class="navbar w-nav" data-animation="over-left" data-collapse="all" data-duration="400">

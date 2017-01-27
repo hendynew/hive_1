@@ -3392,23 +3392,41 @@ body > .navbar-collapse[data-color="purple"]:after {
   }
 }
 
-.right-bar li, .right-bar ul{
-  background-color: white;
-  color: red;
+.right-bar{
+  position: fixed;
+  color: white;
+  background-color: #bcbcbc;
+}
+
+.right-bar li a{
+  color: white;
 }
 
 .item1{
-  background-color: #468966;
+  background-color: #f5a601;
+
 }
 
 .item2{
-  background-color: #FFF05A;
+  background-color: #d3351c;
 }
 
 .item3{
-  background-color: #8E2800;
+  background-color: #3a3a3a;
 }
 
 .item4{
-  background-color: #B64926;
+  background-color: #77a92e;
+}
+
+.item5{
+  background-color: #1cb0f6;
+}
+
+.ok{
+  color: green;
+}
+
+.no{
+  color: red;
 }

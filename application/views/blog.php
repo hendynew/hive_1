@@ -15,6 +15,14 @@
   <link href="<?php echo base_url()?>/resources/images/edwin-fav-32.png" rel="shortcut icon" type="image/x-icon">
   <link href="<?php echo base_url()?>/resources/images/edwin-fav-256.png" rel="apple-touch-icon">
   <link href="<?php echo base_url()?>/resources/css/lightslider.css" rel="stylesheet" type="text/css">
+  <?php
+    echo "<style type='text/css'>";
+    if($home->url_image_bg_hero_blog == ""){
+      echo ".herosection{background-image: url('" . base_url() ."resources/images/Images2.jpg');}";
+    }else {echo ".herosection{background-image: url('" . base_url() ."uploads/". $home->url_image_bg_hero_blog ."');}";}
+
+    echo "</style>";
+  ?>
 </head>
 <body>
   <div class="navbar w-nav" data-animation="over-left" data-collapse="all" data-duration="400">

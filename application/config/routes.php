@@ -49,6 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+//------ Main Blog -------------//
+
 $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
@@ -64,9 +67,22 @@ $route['blog/(:num)'] = 'main/blog/$1';
 $route['view_blog/(:any)'] = 'main/view_blog/$1';
 $route['view_blog'] = 'main/view_blog/1';
 
+
+//------ Control Panel -------------//
+
 $route['cp'] = 'controlpanel/index';
+$route['cp/blog'] = 'controlpanel/blog';
+$route['cp/new_blog'] = 'controlpanel/new_blog';
+$route['cp/submitnewblog'] = 'controlpanel/submitnewblog';
+
+
 $route['home'] = 'controlpanel/home';
 $route['login'] = 'controlpanel/login';
 $route['logout'] = 'controlpanel/logout';
 
 $route['cp/update/home'] = 'controlpanel/update_home';
+$route['cp/update/partner'] = 'controlpanel/update_partner';
+$route['cp/update/fitur'] = 'controlpanel/update_fitur';
+$route['cp/update/hero_blog'] = 'controlpanel/update_hero_blog';
+
+//---------------------------------//

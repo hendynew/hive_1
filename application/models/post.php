@@ -8,7 +8,7 @@ class Post extends CI_Model {
 	}
 
 	public function all_post(){
-		$hasil = $this->db->where("status","1")->get("post")->result_array();
+		$hasil = $this->db->get("post")->result_array();
 		for ($i=0; $i < sizeof($hasil); $i++) {
 			$hasil[$i]["date"] = $this->change_format_date($hasil[$i]["date"]);
 		}
@@ -37,14 +37,17 @@ class Post extends CI_Model {
 		return $this->db->count_all("post");
 	}
 
-	public function new_post($title,$post){
+	public function new_post($data){
 		$arr = [
 			"post_id"=>$this->count_post() + 1,
-			"title"=>$title,
-			"post"=>$post,
+			"title"=>$data['title'],
+			"date"=>date("y-m-d"),
+			"caption"=>$data['caption'],
+			"post"=>$data['content'],
 			"status"=>1
 		];
-		$this->db->insert("post",$arr);
+		if($data['file'] != "0") $arr["url_image"] = $data['file'];
+		if($this->db->insert("post",$arr)) echo "1";
 	}
 
 }

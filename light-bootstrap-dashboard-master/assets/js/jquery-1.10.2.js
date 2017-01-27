@@ -9763,6 +9763,17 @@ jQuery.fn.size = function() {
 
 jQuery.fn.andSelf = jQuery.fn.addBack;
 
+jQuery.extend({
+		handleError: function( s, xhr, status, e ) {
+				// If a local callback was specified, fire it
+				if ( s.error )
+						s.error( xhr, status, e );
+				// If we have some XML response text (e.g. from an AJAX call) then log it in the console
+				else if(xhr.responseText)
+						console.log(xhr.responseText);
+		}
+});
+
 // })();
 if ( typeof module === "object" && module && typeof module.exports === "object" ) {
 	// Expose jQuery as module.exports in loaders that implement the Node

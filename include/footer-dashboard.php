@@ -12,7 +12,7 @@
                     </ul>
                 </nav>
                 <p class="copyright pull-right">
-                    &copy; 2016 <a href="#">Hendy CP</a>
+                    &copy; 2017 <a href="#">Hive CP</a>
                 </p>
             </div>
         </footer>

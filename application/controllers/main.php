@@ -30,6 +30,8 @@ class Main extends CI_Controller {
 	public function blog(){
 		$this->load->library("pagination");
 		$this->load->model("post");
+		$this->load->model("home");
+		$data["home"] = $this->home->load();
 		$data['user'] = $this->user->get();
 		$month = ($this->uri->segment(2) ? $this->uri->segment(2) : date("m"));
 		$config['base_url'] = base_url() . "blog";

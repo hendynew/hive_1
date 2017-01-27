@@ -4,7 +4,7 @@ a {
 
 .herosection {
   height: 750px;
-  background-image: url('../images/Images2.jpg');
+
   background-position: 50% 50%;
   background-size: cover;
 }
@@ -127,7 +127,7 @@ a {
   height: 670px;
   margin-bottom: 0px;
   padding-left: 0px;
-  background-image: url('../images/Images3.jpg');
+  //background-image: url('../images/Images3.jpg');
   background-position: 50% 0px;
   background-size: cover;
 }
@@ -335,7 +335,7 @@ a {
 }
 
 .sec-stayupdated {
-  background-image: url('../images/Images4.jpg');
+  //background-image: url('../images/Images4.jpg');
   background-position: 50% 50%;
   background-size: cover;
 }
