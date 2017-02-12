@@ -179,14 +179,12 @@ $('body').on('click', '.submitNewBlog', function(e){
         e.preventDefault();
         var formData = new FormData($(this).parents("form")[0]);
         formData.append("title",$("#title").val());
-        
+
         var data3 = CKEDITOR.instances.content.getData();
         data3 = data3.substring(3, data3.length - 10);
         formData.append("content",data3);
         
-        var data4 = CKEDITOR.instances.caption.getData();
-        data4 = data4.substring(3, data4.length - 10);
-        formData.append("caption",data4);
+        formData.append("caption",$("#caption").val());
         
         $.ajax({
             url: 'submitnewblog',
@@ -204,6 +202,155 @@ $('body').on('click', '.submitNewBlog', function(e){
                           type: 'success',
                           timer: 1000
                 });
+            },
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
+  });
+
+$('body').on('click', '.submitUpdateBlog', function(e){
+        e.preventDefault();
+        var formData = new FormData($(this).parents("form")[0]);
+        formData.append("title",$("#title").val());
+        formData.append("post_id",$("#title").data("id"));
+        
+        var data3 = CKEDITOR.instances.content.getData();
+        data3 = data3.substring(3, data3.length - 10);
+        formData.append("content",data3);
+        
+        formData.append("caption",$("#caption").val());
+        var url = $(this).data("url");
+        $.ajax({
+            url: url,
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+              $.notify({
+                        icon: 'pe_7s_gift',
+                        message: "Update Success!"
+
+                      },{
+                          type: 'success',
+                          timer: 1000
+                });
+            },
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
+  });
+
+$('body').on('click', '.activateBlog', function(e){
+        e.preventDefault();
+        var formData = new FormData();
+        var id_post = $("#title").data("id");
+        formData.append("id",id_post);
+        var url = $(this).data("url");
+        $.ajax({
+            url: url,
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+              var message = "Post Activated!";
+              if(data == "0") message = "Post Deactivated!";                
+              $.notify({
+                        icon: 'pe_7s_gift',
+                        message: message
+                      },{
+                          type: 'success',
+                          timer: 1000
+              });
+              if(data == "0"){
+                $("#btnDeactivate").fadeOut().delay(2000);
+                $("#btnActivate").fadeIn();
+              }else{
+                $("#btnActivate").fadeOut().delay(2000);
+                $("#btnDeactivate").fadeIn();
+              }
+            },
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
+  });
+
+$('body').on('click', '.submitUpdateAccount', function(e){
+        e.preventDefault();
+        var formData = new FormData();
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var email = $("#email").val();
+        var name = $("#name").val();
+        var telp = $("#telp").val();
+        formData.append("username",username);
+        formData.append("password",password);
+        formData.append("email",email);
+        formData.append("name",name);
+        formData.append("telp",telp);
+        var url = "update/account";
+        $.ajax({
+            url: url,
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+              $.notify({
+                        icon: 'pe_7s_gift',
+                        message: "Profile Updated!"
+                      },{
+                          type: 'success',
+                          timer: 1000
+              });
+            },
+            data: formData,
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+        return false;
+  });
+
+$('body').on('click', '.submitUpdateAbout', function(e){
+        e.preventDefault();
+        var formData = new FormData($(this).parents("form")[0]);
+        formData.append("title1",$("#title").val());
+        formData.append("caption1",$("#caption").val());
+        formData.append("content1",CKEDITOR.instances.content1.getData());
+        formData.append("content2",CKEDITOR.instances.content2.getData());
+        formData.append("title2",$("#title2").val());
+        formData.append("title3",$("#title3").val());
+        formData.append("content3",CKEDITOR.instances.content3.getData());
+        var url = "update/about";
+        $.ajax({
+            url: url,
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+              $.notify({
+                        icon: 'pe_7s_gift',
+                        message: "About Page Updated!"
+                      },{
+                          type: 'success',
+                          timer: 1000
+              });
             },
             data: formData,
             cache: false,

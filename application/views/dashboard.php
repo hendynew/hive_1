@@ -243,6 +243,7 @@
    <script src="<?= base_url() ?>assets/js/light-bootstrap-dashboard.js"></script>
    <script src="<?= base_url() ?>assets/js/custom-dashboard.js"></script>
    <script src="<?= base_url() ?>assets/js/dropzone.js"></script>
+   <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
    <script type="text/javascript">
       $(document).ready(function(){
       

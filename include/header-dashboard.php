@@ -72,7 +72,7 @@
                               </ul>
                         </li>
                         <li>
-                           <a href="">
+                           <a href="<?= base_url('cp/account')?>">
                                Account
                             </a>
                         </li>

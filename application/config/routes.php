@@ -62,19 +62,26 @@ $route['about'] = 'main/about';
 $route['blog'] = 'main/blog';
 $route['contact'] = 'main/contact';
 $route['subscribe'] = 'main/subscribe';
-$route['monthblog_refresh/(:num)'] = 'main/monthblog_refresh';
-$route['blog/(:num)'] = 'main/blog/$1';
 $route['view_blog/(:any)'] = 'main/view_blog/$1';
 $route['view_blog'] = 'main/view_blog/1';
 
+$route['videos'] = 'main/videos';
 
 //------ Control Panel -------------//
 
 $route['cp'] = 'controlpanel/index';
 $route['cp/blog'] = 'controlpanel/blog';
+$route['cp/blog/(:any)'] = 'controlpanel/view_blog/$1';
 $route['cp/new_blog'] = 'controlpanel/new_blog';
-$route['cp/submitnewblog'] = 'controlpanel/submitnewblog';
+$route['cp/submitnewblog'] = 'controlpanel/submit_blog/insert';
+$route['submitupdateblog'] = 'controlpanel/submit_blog/update';
+$route['activateBlog'] = 'controlpanel/activate_blog';
 
+$route['cp/account'] = 'controlpanel/account';
+$route['cp/update/account'] = 'controlpanel/update_account';
+
+$route['cp/about'] = 'controlpanel/about';
+$route['cp/update/about'] = 'controlpanel/update_about';
 
 $route['home'] = 'controlpanel/home';
 $route['login'] = 'controlpanel/login';
@@ -86,3 +93,8 @@ $route['cp/update/fitur'] = 'controlpanel/update_fitur';
 $route['cp/update/hero_blog'] = 'controlpanel/update_hero_blog';
 
 //---------------------------------//
+
+
+//-----------------API
+
+$route['selectposts'] = 'api/select_post';

@@ -30,12 +30,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
+                    <form enctype="multipart/form-data" action="upload.php" method="post">
                         <div class="content">
                             <div class="row">
                               <div class="col-md-6">
                                  <div class="form-group">
                                     <label>Title</label>
-                                    <input id="title" type="text" placeholder="Your title here.." class="form-control" value="">
+                                    <input id="title" type="text" placeholder="Your title here.." data-id="<?= $post->post_id?>" class="form-control" value="<?=$post->title?>">
                                  </div>
                               </div>
                               <div class="col-md-3">
@@ -57,7 +58,7 @@
                               <div class="col-md-12">
                                  <div class="form-group">
                                     <label>Content</label>
-                                    <textarea name="edit2" id="content"></textarea>
+                                    <textarea name="edit2" id="content"><?=$post->post?></textarea>
                                     <script>
                                        CKEDITOR.replace( 'edit2' );
                                     </script>
@@ -65,12 +66,22 @@
                               </div>
                            </div>
                            <div class='row'>
-                              <div class="col-md-12 right">
-                                 <button data-target="subscribe" type="submit" class="btn btn-info btn-fill pull-right submitNewBlog">Submit!</button>
+                              <div class="col-md-12">
+                                  <button type="submit" data-url="<?= base_url('submitupdateblog')?>"class="btn btn-info btn-fill pull-right submitUpdateBlog">Submit!</button>
+                                  <?php
+                                    if($post->status == "1"){
+                                      echo '<button id="btnDeactivate" data-url="' . base_url() . '/activateBlog" type="submit" class="btn btn-danger btn-fill pull-right activateBlog">Deactivate</button>';
+                                      echo '<button id="btnActivate" type="submit" class="btn btn-success btn-fill pull-right activateBlog" style="display:none">Activate</button>';
+                                    }else{
+                                      echo '<button id="btnDeactivate" type="submit" class="btn btn-danger btn-fill pull-right activateBlog" style="display:none">Deactivate</button>';
+                                      echo '<button id="btnActivate" data-url="' . base_url() . '/activateBlog" type="submit" class="btn btn-success btn-fill pull-right activateBlog">Activate</button>';
+                                    }
+                                  ?>
                               </div>
                            </div>
                         </div>
                     </div>
+                    </form>
                 </div>
             </div>
         </div>

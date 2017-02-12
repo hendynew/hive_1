@@ -62,9 +62,35 @@ class Controlpanel extends CI_Controller {
 		$this->load->view("dashboard-blog",$data);
 	}
 
+	public function view_blog($id){
+		$this->load->model("post");
+		$data['post'] = $this->post->view_post($id);
+		$data['page'] = "Blog";
+		$this->load->view("dashboard-view-blog",$data);
+	}
+
 	public function new_blog(){
 		$data['page'] = "New Blog";
 		$this->load->view("dashboard-new-blog",$data);
+	}
+
+	public function about(){
+		$this->load->model("about");
+		$data["about"] = $this->about->load();
+		$data['page'] = "About";
+		$this->load->view("dashboard-about",$data);
+	}
+
+	public function account(){
+		$this->load->model("user");
+		$data['user'] = $this->user->select_all();
+		$data['page'] = "Account";
+		$this->load->view("dashboard-account",$data);
+	}
+
+	public function update_account(){
+		$this->load->model("user");
+		$this->user->update($_POST);
 	}
 
 	public function update_home(){
@@ -150,7 +176,7 @@ class Controlpanel extends CI_Controller {
 		if($arr['url_image_bg_hero_blog'] != "0") $this->home->update($arr);
 	}
 
-	public function submitnewblog(){
+	public function submit_blog($action){
 		$arr = [];
 		if($_FILES["file"]['error'] == 0){
 				if(move_uploaded_file($_FILES["file"]['tmp_name'], 'uploads/' . $_FILES["file"]['name'])) {
@@ -163,6 +189,29 @@ class Controlpanel extends CI_Controller {
 		$arr['caption'] = $_POST["caption"];
 		$arr['content'] = $_POST["content"];
 		$this->load->model("post");
-		echo $this->post->new_post($arr);
+		if($action == "insert") echo $this->post->new_post($arr);
+		if($action == "update") {
+			$arr['post_id'] = $_POST['post_id'];
+			echo $this->post->update($arr);
+		}
+	}
+
+	public function update_about(){
+		if(isset($_FILES["file"])){
+			if($_FILES["file"]['error'] == 0){
+			if(move_uploaded_file($_FILES["file"]['tmp_name'], 'uploads/' . $_FILES["file"]['name'])) {
+			   	$_POST['file'] = $_FILES["file"]['name'];
+			} else{
+				$_POST['file'] = "0";
+			}
+			} else $_POST['file'] = "0";
+		}else $_POST["file"] = "0";
+		$this->load->model("about");
+		echo $this->about->update($_POST);
+	}
+
+	public function activate_blog(){
+		$this->load->model("post");
+		echo $this->post->activate($_POST["id"]);
 	}
 }

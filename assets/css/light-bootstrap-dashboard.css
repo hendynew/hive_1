@@ -3430,3 +3430,7 @@ body > .navbar-collapse[data-color="purple"]:after {
 .no{
   color: red;
 }
+
+.pull-right{
+  margin-left: 5px;
+}

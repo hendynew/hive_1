@@ -1,94 +1,119 @@
 <!DOCTYPE html>
 <!--  This site was created in Webflow. http://www.webflow.com -->
-<!--  Last Published: Wed Jan 04 2017 06:01:22 GMT+0000 (UTC)  -->
-<html data-wf-page="586b1575e8c25d7a177a9b45" data-wf-site="586b1575e8c25d7a177a9b47">
+<!--  Last Published: Thu Feb 09 2017 02:57:05 GMT+0000 (UTC)  -->
+<html data-wf-page="589aefd8d90fbc9f3bf70b2b" data-wf-site="589aefd8d90fbc9f3bf70b30">
 <head>
-  <meta charset="<?php echo base_url()?>/resources/utf-8">
+  <meta charset="utf-8">
   <title>Blog</title>
   <meta content="Blog" property="og:title">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
-  <link href="<?php echo base_url()?>/resources/css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="<?php echo base_url()?>/resources/css/webflow.css" rel="stylesheet" type="text/css">
-  <link href="<?php echo base_url()?>/resources/css/edwin-prasetyo-website-5efc92dbf3dbaa05.webflow.css" rel="stylesheet" type="text/css">
-  <script src="<?php echo base_url()?>/resources/js/modernizr.js" type="text/javascript"></script>
-  <link href="<?php echo base_url()?>/resources/images/edwin-fav-32.png" rel="shortcut icon" type="image/x-icon">
-  <link href="<?php echo base_url()?>/resources/images/edwin-fav-256.png" rel="apple-touch-icon">
-  <link href="<?php echo base_url()?>/resources/css/lightslider.css" rel="stylesheet" type="text/css">
-  <?php
-    echo "<style type='text/css'>";
-    if($home->url_image_bg_hero_blog == ""){
-      echo ".herosection{background-image: url('" . base_url() ."resources/images/Images2.jpg');}";
-    }else {echo ".herosection{background-image: url('" . base_url() ."uploads/". $home->url_image_bg_hero_blog ."');}";}
-
-    echo "</style>";
-  ?>
+  <link href="<?= base_url() ?>/resources/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="<?= base_url() ?>/resources/css/webflow.css" rel="stylesheet" type="text/css">
+  <link href="<?= base_url() ?>/resources/css/custom.css" rel="stylesheet" type="text/css">
+  <link href="<?= base_url() ?>/resources/css/edwin-prasetyo-website-5e-1e1f6ac694fa6.webflow.css" rel="stylesheet" type="text/css">
+  <script src="<?= base_url() ?>/resources/js/modernizr.js" type="text/javascript"></script>
+  <link href="<?= base_url() ?>/resources/images/edwin-fav-32.png" rel="shortcut icon" type="image/x-icon">
+  <link href="<?= base_url() ?>/resources/images/edwin-fav-256.png" rel="apple-touch-icon">
 </head>
 <body>
-  <div class="navbar w-nav" data-animation="over-left" data-collapse="all" data-duration="400">
-    <div class="w-container">
-      <a class="navbarlogo w-nav-brand" href="<?php echo base_url()?>"><img src="<?php echo base_url()?>/resources/images/EdwinLogo_1.png" width="87">
-      </a>
-      <nav class="openmenu w-nav-menu" role="navigation">
-        <a class="btnclose w-inline-block" data-ix="new-interaction" href="#"></a>
-        <h1 class="edwinmenu">Edwin<br>Prasetyo</h1><img class="reddivbar" src="<?php echo base_url()?>/resources/images/barmerah-33.png"><a class="navlink w-nav-link" href="<?php echo base_url()?>about">About</a><a class="navlink w-nav-link">Blog</a><a class="navlink w-nav-link" href="<?php echo base_url()?>contact">Contact</a>
-      </nav>
-      <div class="menubtn w-nav-button">
-        <div class="iconstyle w-icon-nav-menu"></div>
-      </div>
-    </div>
-  </div>
-  <div class="herosection w-clearfix">
-    <div class="herotext w-clearfix">
-      <h1 class="heroh1">LEARN</h1><img class="whitedivider" sizes="(max-width: 767px) 50vw, 244px" src="<?php echo base_url()?>/resources/images/garis-26.jpg" srcset="<?php echo base_url()?>/resources/images/garis-26-p-500x14.jpeg 500w, images/garis-26.jpg 565w" width="244">
-      <h1 class="from heroh1">FROM EVERYONE</h1>
-      <h1 class="follow heroh1">FOLLOW</h1><img class="whitedivider" sizes="(max-width: 767px) 50vw, 244px" src="<?php echo base_url()?>/resources/images/garis-26.jpg" srcset="<?php echo base_url()?>/resources/images/garis-26-p-500x14.jpeg 500w, images/garis-26.jpg 565w" width="244">
-      <h1 class="heroh1 none">NO ONE</h1><img class="garisnama" src="<?php echo base_url()?>/resources/images/garis-27.jpg" width="46">
-      <h3 class="edwinprasetyo">Edwin Prasetyo</h3>
-    </div>
-  </div>
-  <div class="section-blog-post w-clearfix">
+  <?php include('include/navbar-edwin.php')?>
+  <div class="section-blog-post">
     <div class="contblog w-container">
       <h1 class="txt-tradingonline">BLOG</h1>
-      <div class="blog div-red-divider"><img src="<?php echo base_url()?>resources/images/garismerah-34.png" width="118">
+      <div class="blog div-red-divider"><img src="<?= base_url() ?>/resources/images/garismerah-34.png" width="91">
       </div>
-      <a class="btn-latestblog w-inline-block" href="<?=base_url()?>view_blog/latest">
-        <div class="txt-checkout">Check Out My
-          <br>Latest Blog Post</div>
-      </a>
-      <div class="div-month-blog" data-year="2017">
-        <?= $link; ?>
-      </div>
-
-      <a class="btn-prev-blog-posts mobile w-inline-block" href="#">
-        <div class="btn-prev-blog-posts head">p r e v</div>
-      </a>
-      <div class="div-blogs w-clearfix">
-        <div class="colblogs w-row">
-          <?php foreach($posts as $p){?>
-            <div class="colblogpost w-col w-col-4">
-              <a class="blogpost linkblogpost w-inline-block" href="<?php echo base_url()?>view_blog/<?= $p->post_id ?>">
-                <div class="thumbnail"><img src="<?php echo base_url()?>resources/images/<?= ($p->url_image != "" ? $p->url_image : "Images9.jpg")?>">
-                </div>
-                <h2 class="head-blog-post"><?= $p->date?></h2>
-                <h2 class="head-blog-post title"><?= $p->title?></h2>
-              </a>
+      <div class="divblogddsearch">
+        <div class="divsearch w-hidden-main w-hidden-medium">
+          <div class="w-row">
+            <div class="w-col w-col-2 w-col-small-2 w-col-tiny-2"><img class="img-search" src="<?= base_url() ?>/resources/images/search-btn-37.png" width="73.5">
             </div>
-          <?php
-        }
-          ?>
-          <div class="colblogpost"></div>
+            <div class="w-col w-col-10 w-col-small-10 w-col-tiny-10">
+              <div class="w-form">
+                <form data-name="Search Form" class="searchform" name="search-form">
+                  <input class="searchfield w-input search" data-name="search" maxlength="256" name="search" placeholder="SEARCH" type="text">
+                </form>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="btn-prev-blog-posts head w-hidden-main w-hidden-medium">n e x t</div>
+        <div class="w-dropdown w-hidden-main w-hidden-medium" data-delay="0">
+          <div class="blogdropdown w-dropdown-toggle">
+            <div class="blogddtext active-month"><?= strtoupper(date('F', mktime(0, 0, 0, $month, 10)) . date(" Y")) ?></div>
+            <div class="w-icon-dropdown-toggle"></div>
+          </div>
+          <nav class="dropdownlist w-dropdown-list">
+            <?php for ($i = 1; $i <= 12; $i++) {
+                $date = strtoupper(date('F', mktime(0, 0, 0, $i, 10)) . date(" Y"));
+                  echo '<a class="blogddtext w-dropdown-link selectMonth" href="#" data-month="' . $i .'" data-year="' . date("Y") .'">' . $date . '</a>';
+              }?>
+          </nav>
+        </div>
+        <div class="w-hidden-small w-hidden-tiny w-row">
+          <div class="w-col w-col-5">
+            <div class="w-dropdown" data-delay="0">
+              <div class="blogdropdown w-dropdown-toggle">
+                <div class="blogddtext active-month"><?= strtoupper(date('F', mktime(0, 0, 0, $month, 10)) . date(" Y")) ?></div>
+                <div class="w-icon-dropdown-toggle"></div>
+              </div>
+              <nav class="dropdownlist w-dropdown-list">
+              <?php for ($i = 1; $i <= 12; $i++) {
+                $date = strtoupper(date('F', mktime(0, 0, 0, $i, 10)) . date(" Y"));
+                echo '<a class="blogddtext w-dropdown-link selectMonth" href="#" data-month="' . $i .'" data-year="' . date("Y") .'">' . $date . '</a>';
+              }?>
+              </nav>
+            </div>
+          </div>
+          <div class="w-col w-col-7">
+            <div class="divsearch">
+              <div class="w-row">
+                <div class="w-col w-col-2"><img class="img-search" src="<?= base_url() ?>/resources/images/search-btn-37.png" width="73.5">
+                </div>
+                <div class="w-col w-col-10">
+                  <div class="w-form">
+                    <form data-name="Search Form" class="searchform" name="search-form">
+                      <input class="searchfield w-input search2" data-name="search" maxlength="256" name="search" placeholder="SEARCH" type="text">
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      </div><a class="btn-prev-blog-posts w-inline-block" href="#"><h4 class="btn-prev-blog-posts head w-hidden-small w-hidden-tiny">p<br>r<br>e<br>v</h4></a><a class="btn-next-prev-blog btn-prev-blog-posts w-inline-block" href="#"><h4 class="btn-prev-blog-posts head w-hidden-small w-hidden-tiny">n<br>e<br>x<br>t</h4></a>
+      <div id='noresult' class="blogdiv hidden">
+            <div class="w-row">
+              <div class="colgambarblog w-col w-col-4">
+              </div>
+              <div class="w-col w-col-8">
+                <div class="bloginfo">
+                  <h4 class="blogheader">No Result</h4>
+                </div>
+              </div>
+          </div>
+      </div>
+      <div class="blogall">
+      <?php if(isset($posts)){foreach($posts as $p){ ?>
+      <div class="blogdiv">
+        <div class="w-row">
+          <div class="colgambarblog w-col w-col-4"><img src="<?php echo base_url()?>resources/images/<?= ($p->url_image != "" ? $p->url_image : "Images9.jpg")?>">
+          </div>
+          <div class="w-col w-col-8">
+            <div class="bloginfo">
+              <h4 class="blogheader"><?= $p->title ?></h4>
+              <h4 class="blogdate"><?= $p->date ?></h4>
+              <p class="blogdesc"><?= $p->caption ?></p>
+              <a class="btnseemore w-inline-block" href="<?= base_url()?>view_blog/<?= $p->post_id?>"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <?php }}else{
+        echo "<script>document.getElementById('noresult').style.display='inline'</script>";
+      } ?>
+    </div>
+    </div>
   </div>
-  <?php include("include/footer-edwin.php") ?>
-  <style> .lSAction > a{background-image: url('<?= base_url()?>resources/images/controls.png');}</style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-  <script src="<?php echo base_url()?>/resources/js/webflow.js" type="text/javascript"></script>
-  <script src="<?php echo base_url()?>/resources/js/custom.js" type="text/javascript"></script>
-  <script src="<?php echo base_url()?>/resources/js/lightslider.js" type="text/javascript"></script>
-  <!-- [if lte IE 9]><script src="<?php echo base_url()?>/resources/https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
+  <?php include('include/footer-edwin.php') ?>
 </body>
 </html>

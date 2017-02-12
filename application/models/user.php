@@ -7,6 +7,10 @@ class User extends CI_Model {
 		$this->load->database();
 	}
 
+	public function select_all(){
+		return $this->db->get("user")->row();
+	}
+
 	public function get(){
 		return $this->db->select("email,telp")->get("user")->row();
 	}
@@ -23,5 +27,12 @@ class User extends CI_Model {
 
 	public function email(){
 		return $this->db->select("email")->get("user")->row();
+	}
+
+	public function update($data){
+		if($data["password"] == ""){
+			unset($data["password"]);
+		}
+		$this->db->update("user",$data);
 	}
 }

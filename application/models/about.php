@@ -11,4 +11,11 @@ class About extends CI_Model {
 	{
 		return $this->db->get("page_about")->row();
 	}
+
+	public function update($data){
+		if($data["file"] == "0") {
+			unset($data["file"]);
+		}
+		$this->db->update("page_about",$data);
+	}
 }

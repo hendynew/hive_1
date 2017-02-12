@@ -27,27 +27,15 @@ class Main extends CI_Controller {
 		redirect("");
 	}
 
+	public function videos(){
+		$this->load->view("videos");
+	}
+
 	public function blog(){
-		$this->load->library("pagination");
 		$this->load->model("post");
-		$this->load->model("home");
-		$data["home"] = $this->home->load();
-		$data['user'] = $this->user->get();
-		$month = ($this->uri->segment(2) ? $this->uri->segment(2) : date("m"));
-		$config['base_url'] = base_url() . "blog";
-		$config["total_rows"] = 12;
-		$config['per_page'] = 1;
-		$config['use_page_numbers'] = TRUE;
-		$config['num_links'] = 2;
-		$config["uri_segment"] = 2;
-		$config["year"] = ($this->input->post("year") ? $this->input->post("year") : "2017");
-		$config['first_link'] = "JAN " . $config["year"];
-		$config['last_link'] = "DEC " . $config["year"];
-		$config['first_tag_close'] = '</h3></a>';
-		$config['prev_link'] = '';
-		$this->pagination->initialize($config);
-		$data['link'] = $this->pagination->create_links2();
-		$data['posts'] = $this->post->view_post_month($month,$config["year"]);
+		$data['month'] = ($this->uri->segment(2) ? $this->uri->segment(2) : date("m"));
+		$data['year'] = ($this->input->post("year") ? $this->input->post("year") : date("y"));
+		$data['posts'] = $this->post->view_post_month($data['month'],$data['year']);
 		$this->load->view("blog",$data);
 	}
 
@@ -108,11 +96,11 @@ class Main extends CI_Controller {
 		$this->email->to($admin->email);
 
 		$this->email->subject($name . ' wants to talk to you.');
-		$this->email->message('
-			Email : ' . $email . '<br>
-			Name : ' . $name .' <hr>
-			Message : ' . $message .'
-		');
+		$this->email->message(
+			'Email : ' . $email . '<br>' .
+			'Name : ' . $name .' <hr>' .
+			'Message : ' . $message
+		);
 
 		if($this->email->send()){
 			$this->load->model("message");

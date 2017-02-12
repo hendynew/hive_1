@@ -22,7 +22,15 @@ class Post extends CI_Model {
 	}
 
 	public function view_post_month($month,$year){
-		$hasil = $this->db->query("SELECT * FROM post WHERE DATE(date) BETWEEN '" . $year . '-' . $month . "-01' AND '" . $year . '-' . $month . "-31'")->result();
+		$hasil = $this->db->query("SELECT * FROM post WHERE DATE(date) BETWEEN '" . $year . '-' . $month . "-01' AND '" . $year . '-' . $month . "-31' AND STATUS='1'")->result();
+		foreach($hasil as $h){
+			$h->date = $this->change_format_date($h->date);
+		}
+		return $hasil;
+	}
+
+	public function search($item){
+		$hasil = $this->db->query("SELECT * FROM post WHERE STATUS='1' AND title LIKE '%" . $item . "%' OR post LIKE '%" . $item . "%' OR caption LIKE '%" . $item . "%'")->result();
 		foreach($hasil as $h){
 			$h->date = $this->change_format_date($h->date);
 		}
@@ -30,7 +38,7 @@ class Post extends CI_Model {
 	}
 
 	public function change_format_date($date){
-		return date("l, d.m.y",strtotime($date));
+		return date("d. m. y",strtotime($date));
 	}
 
 	public function count_post(){
@@ -48,6 +56,25 @@ class Post extends CI_Model {
 		];
 		if($data['file'] != "0") $arr["url_image"] = $data['file'];
 		if($this->db->insert("post",$arr)) echo "1";
+	}
+
+	public function update($data){
+		$this->db->where("post_id",$data['post_id']);
+		$arr = [
+			"title"=>$data['title'],
+			"date"=>date("y-m-d"),
+			"caption"=>$data['caption'],
+			"post"=>$data['content']
+		];
+		if($data['file'] != "0") $arr["url_image"] = $data['file'];
+		if($this->db->update("post",$arr)) echo "1";
+	}
+
+	public function activate($id){
+		$data = $this->db->where("post_id",$id)->get("post")->row();
+		$status = ($data->status == "0") ? "1" : "0";
+		echo $status;
+		$this->db->where("post_id",$id)->update("post",array("status"=>$status));
 	}
 
 }
