@@ -32,9 +32,9 @@
                         <form enctype="multipart/form-data" action="upload.php" method="post">
                            <h4> <a id="headline">Headline </a> </h4>
                            <div class="row">
-                              <div class="col-md-3">
+                              <div class="col-md-5">
                                  <div class="form-group">
-                                    <label>Background Headline </label>
+                                    <label>Background Headline (max file: 8MB)</label>
                                     <input type="file" id="herofile" class="herogroup" />
                                  </div>
                               </div>
@@ -123,70 +123,20 @@
                            <?php } ?>
                         </form>
                         <hr>
-                        <form enctype="multipart/form-data" id="formpartner" action="upload.php" method="post">
-                           <h4> <a id="partner">Partners</a> </h4>
+                        <h4> <a id="video">Video Home</a> </h4>
                            <div class="row">
-                              <div class="col-md-6">
+                              <div class="col-md-3">
                                  <div class="form-group">
-                                    <label>Title 5</label>
-                                    <input id="title5" type="text" class="form-control" value="<?=$home->title5?>">
-                                 </div>
-                              </div>
-                           </div>
-                           <?php foreach($content3 as $c3){?>
-                           <div class="row">
-                              <div class='col-md-3'>
-                                 <label>Partner <?=$c3->id_content?> </label>
-                                 <input type="file" name="file<?=$c3->id_content?>" class="fiturgroup" size="20" />
-                              </div>
-                              <div class='col-md-3'>
-                                 <label>Since <?=$c3->id_content?> </label>
-                                 <input id="since<?=$c3->id_content?>" type="text" class="form-control" value="<?=$c3->since?>">
-                              </div>
-                           </div>
-                           <br>
-                           <?php } ?>
-                           <div class="row">
-                              <div class="col-md-12 right">
-                                 <button data-target="partner" type="submit" class="btn btn-info btn-fill pull-right submitPartner">Update</button>
-                              </div>
-                           </div>
-                        </form>
-                        <hr>
-                        <form enctype="multipart/form-data" action="upload.php" method="post">
-                           <h4> <a id="subscribe">Subscribe</a> </h4>
-                           <div class="row">
-                              <div class="col-md-6">
-                                 <div class="form-group">
-                                    <label>Title 6</label>
-                                    <input id="title6" type="text" class="form-control" value="<?=$home->title6?>">
-                                 </div>
-                              </div>
-                              <div class="col-md-4">
-                                 <div class="form-group">
-                                    <label>Background 6</label>
-                                    <input type="file" id="subscribefile" class="subscribegroup" size="20" />
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="row">
-                              <div class="col-md-12">
-                                 <div class="form-group">
-                                    <label>Content 6</label>
-                                    <textarea name="edit4" id="content6"><?=$home->content6?></textarea>
-                                    <script>
-                                       CKEDITOR.replace( 'edit4' );
-                                    </script>
+                                    <label>URL Video </label>
+                                    <input id="videohome" data-name="url_video" type="text" class="form-control" value="<?=$home->url_video?>">
                                  </div>
                               </div>
                            </div>
                            <div class='row'>
                               <div class="col-md-12 right">
-                                 <button data-target="subscribe" type="submit" class="btn btn-info btn-fill pull-right submitHome">Update Page</button>
+                                 <button data-target="home"  type="submit" class="btn btn-info btn-fill pull-right submitVideo">Update Page</button>
                               </div>
                            </div>
-                           <div class="clearfix"></div>
-                        </form>
                      </div>
                   </div>
                </div>
@@ -211,15 +161,9 @@
                         </a>
                      </li>
                      <li>
-                        <a class="item4" href="#partner">
-                           <i class="pe-7s-users"></i>
-                           <p>Partner</p>
-                        </a>
-                     </li>
-                     <li>
-                        <a class="item5" href="#subscribe">
-                           <i class="pe-7s-users"></i>
-                           <p>Subscribe</p>
+                        <a class="item4" href="#video">
+                           <i class="pe-7s-note2"></i>
+                           <p>Video</p>
                         </a>
                      </li>
                   </ul>

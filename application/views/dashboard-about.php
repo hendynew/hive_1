@@ -65,6 +65,7 @@
                                  </div>
                               </div>
                            </div>
+                           <form enctype="multipart/form-data" action="upload.php" method="post">
                            <div class="row">
                            <div class="col-md-4">
                                  <div class="form-group">
@@ -78,14 +79,13 @@
                                     <input id="title3" type="text" placeholder="Your title here.." class="form-control" value="<?=$about->title3?>">
                                  </div>
                               </div>
-                              <form enctype="multipart/form-data" action="upload.php" method="post">
                               <div class="col-md-4">
                                  <div class="form-group">
                                     <label>Background </label>
-                                    <input type="file" id="file" />
+                                    <input type="file" id="file" name="file" />
                                  </div>
                               </div>
-                              </form>
+                              
                            </div>
                            <div class="row">
                               <div class="col-md-12">
@@ -103,6 +103,36 @@
                                   <button type="submit"class="btn btn-info btn-fill pull-right submitUpdateAbout">Submit!</button>
                               </div>
                            </div>
+                           </form>
+                           <form enctype="multipart/form-data" id="formpartner" action="upload.php" method="post">
+                           <h4> <a id="partner">Partners</a> </h4>
+                           <div class="row">
+                              <div class="col-md-6">
+                                 <div class="form-group">
+                                    <label>Title 5</label>
+                                    <input id="title5" type="text" class="form-control" value="<?=$home->title5?>">
+                                 </div>
+                              </div>
+                           </div>
+                           <?php foreach($content3 as $c3){?>
+                           <div class="row">
+                              <div class='col-md-3'>
+                                 <label>Partner <?=$c3->id_content?> </label>
+                                 <input type="file" name="file<?=$c3->id_content?>" class="fiturgroup" size="20" />
+                              </div>
+                              <div class='col-md-3'>
+                                 <label>Since <?=$c3->id_content?> </label>
+                                 <input id="since<?=$c3->id_content?>" type="text" class="form-control" value="<?=$c3->since?>">
+                              </div>
+                           </div>
+                           <br>
+                           <?php } ?>
+                           <div class="row">
+                              <div class="col-md-12 right">
+                                 <button data-target="partner" type="submit" class="btn btn-info btn-fill pull-right submitPartner">Update</button>
+                              </div>
+                           </div>
+                        </form>
                      </div>
                   </div>
                </div>

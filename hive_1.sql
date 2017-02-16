@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2017 at 06:36 AM
+-- Generation Time: Feb 15, 2017 at 04:12 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS `home_content_2` (
 --
 
 INSERT INTO `home_content_2` (`id_content`, `title`, `content`, `url_image`, `status`) VALUES
-('1', 'KEBEBASAN WAKTU', 'Online trading dapat dilakukan kapan saja dan di mana saja. Trader dapat melakukan trading dalam kurun waktu 24 jam.', 'icon1.png', '1'),
-('2', 'MURAH & MUDAH', 'Online trading mudah dilakukan, pelakunya hanya memerlukan gadget. Tidak perlu lokasi yang strategis maupun biaya promosi. Hal ini juga membuat biaya operasional online trading jadi relatif lebih kecil.', 'icon2.png', '1'),
-('3', 'LEBIH AMAN', 'Lorem ipsum dolor sit amet, autem nulla definitionem cu eum. Vel utamur admodum splendide ut.', 'icon3.png', '1'),
-('4', 'KEUNTUNGAN 100%', 'Lorem ipsum dolor sit amet, autem nulla definitionem cu eum. Vel utamur admodum splendide ut.', 'icon4.png', '1');
+('1', 'KEBEBASAN WAKTU', '<p class="penjelasan-keunggulan">Online trading dapat dilakukan kapan saja dan di mana saja. Trader dapat melakukan trading dalam kurun waktu 24 jam.</p>\r\n', 'icon1.png', '1'),
+('2', 'MURAH & MUDAH', '<p class="penjelasan-keunggulan">Online trading mudah dilakukan, pelakunya hanya memerlukan gadget. Tidak perlu lokasi yang strategis maupun biaya promosi. Hal ini juga membuat biaya operasional online trading jadi relatif lebih kecil.</p>\r\n', 'icon2.png', '1'),
+('3', 'LEBIH AMAN', '<p class="penjelasan-keunggulan">Lorem ipsum dolor sit amet, autem nulla definitionem cu eum. Vel utamur admodum splendide ut.</p>\r\n', 'icon3.png', '1'),
+('4', 'KEUNTUNGAN 100%', '<p class="penjelasan-keunggulan">Lorem ipsum dolor sit amet, autem nulla definitionem cu eum. Vel utamur admodum splendide ut.</p>\r\n', 'icon4.png', '1');
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE IF NOT EXISTS `page_about` (
 --
 
 INSERT INTO `page_about` (`id_content`, `title1`, `caption1`, `content1`, `content2`, `title2`, `title3`, `content3`, `url_image`) VALUES
-('1', 'TRADING MENURUT EDWIN', 'Percayakah Anda bila saya mengakatan bahwa dalam satu hari Anda dapat melakukan hingga belasan kegiatan trading? Ya, trading adalah sesuatu yang tidak dapat terlepas dari kehidupan kita.', '<p>Setiap harinya setiap orang pasti melakukan trading. Trading pun tidak selamanya terjadi dalam skala yang besar. Membeli makanan, membayar parkir, atau bahkan pada saat Anda menerima gaji sebenarnya sudah merupakan kegiatan trading. Secara singkat, trading berarti konsep ekonomi dasar yang melibatkan jual beli barang atau jasa, dengan kompensasi yang dibayarkan oleh pembeli kepada penjual, atau pertukaran dari barang maupun jasa dari kedua pihak. Trading sendiri lebih sering digunakan oleh kebanyakan dari kita untuk memperoleh keuntungan, sehingga secara umum trading dapat terbagi menjadi 2 jenis, yaitu ruang dan waktu. Mudahnya, trading ruang adalah kegiatan dagang yang terjadi ketika Anda membeli handphone di Hongkong dan menjualnya kembali di Indonesia. Sementara itu trading waktu terjadi ketika Anda membeli beras pada saat musim panen dan menjualnya pada saat musim tanam (non-panen). Dari sisi historis, trading sebenarnya sudah ada dari zaman dahulu kala. &lsquo;Barter&rsquo; mungkin adalah istilah yang lebih familiar di telinga Anda.</p>\r\n', '<p>Setiap harinya setiap orang pasti melakukan trading. Trading pun tidak selamanya terjadi dalam skala yang besar. Membeli makanan, membayar parkir, atau bahkan pada saat Anda menerima gaji sebenarnya sudah merupakan kegiatan trading. Secara singkat, trading berarti konsep ekonomi dasar yang melibatkan jual beli barang atau jasa, dengan kompensasi yang dibayarkan oleh pembeli kepada penjual, atau pertukaran dari barang maupun jasa dari kedua pihak. Trading sendiri lebih sering digunakan oleh kebanyakan dari kita untuk memperoleh keuntungan, sehingga secara umum trading dapat terbagi menjadi 2 jenis, yaitu ruang dan waktu. Mudahnya, trading ruang adalah kegiatan dagang yang terjadi ketika Anda membeli handphone di Hongkong dan menjualnya kembali di Indonesia. Sementara itu trading waktu terjadi ketika Anda membeli beras pada saat musim panen dan menjualnya pada saat musim tanam (non-panen). Dari sisi historis, trading sebenarnya sudah ada dari zaman dahulu kala. &lsquo;Barter&rsquo; mungkin adalah istilah yang lebih familiar di telinga Anda.</p>\r\n', 'about', 'EDWIN', '<p>Edwin Prasetyo telah bergelut dalam dunia trading sejak masih belia. Mengikuti jejak orang tua nya di trading konvensional, Edwin kini juga menyeriusi karirnya di trading online. Keseriusannya terhadap trading online diawali dengan penelusuran konseptual yang tepat dan diaplikasikan dalam praktik tradingnya. Bagi Edwin,memulai trading bukan hanya karena modal dana, namun juga pemahaman kita atas praktik industri yang digeluti, serta passion kita untuk terus mengeksplorasi industri tersebut. Untuk itu, Edwin pergi untuk belajar ke ahli-ahli trading dari berbagai penjuru dunia. Tidak sia-sia, perjuangan Edwin akhirnya membuahkan hasil.</p>\r\n', '');
+('1', 'TRADING MENURUT EDWIN', 'Percayakah Anda bila saya mengakatan bahwa dalam satu hari Anda dapat melakukan hingga belasan kegiatan trading? Ya, trading adalah sesuatu yang tidak dapat terlepas dari kehidupan kita.', 'Setiap harinya setiap orang pasti melakukan trading. Trading pun tidak selamanya terjadi dalam skala yang besar. Membeli makanan, membayar parkir, atau bahkan pada saat Anda menerima gaji sebenarnya sudah merupakan kegiatan trading.<br />\r\n<br />\r\nSecara singkat, trading berarti konsep ekonomi dasar yang melibatkan jual beli barang atau jasa, dengan kompensasi yang dibayarkan oleh pembeli kepada penjual, atau pertukaran dari barang maupun jasa dari kedua pihak. Trading sendiri lebih sering digunakan oleh kebanyakan dari kita untuks\r\n', 'Setiap harinya setiap orang pasti melakukan trading. Trading pun tidak selamanya terjadi dalam skala yang besar. Membeli makanan, membayar parkir, atau bahkan pada saat Anda menerima gaji sebenarnya sudah merupakan kegiatan trading.<br />\r\n<br />\r\nSecara singkat, trading berarti konsep ekonomi dasar yang melibatkan jual beli barang atau jasa, dengan kompensasi yang dibayarkan oleh pembeli kepada penjual, atau pertukaran dari barang maupun jasa dari kedua pihak. Trading sendiri lebih sering digunakan oleh kebanyakan dari kita untuks\r\n', 'about', 'EDWIN', 'Edwin Prasetyo telah bergelut dalam dunia trading sejak masih belia. Mengikuti jejak orang tua nya di trading konvensional, Edwin kini juga menyeriusi karirnya di trading online. Keseriusannya &nbsp; terhadap trading online diawali dengan penelusuran konseptual yang &nbsp;tepat dan diaplikasikan dalam praktik tradingnya.<br />\r\nBagi Edwin, memulai trading bukan hanya karena modal dana, namun juga pemahaman kita atas praktik industri yang digeluti, serta passion kita untuk terus mengeksplorasi industri tersebut. Untuk itu, Edwin pergi untuk belajar ke ahli-ahli &nbsp;trading &nbsp;dari &nbsp;berbagai penjuru dunia. Tidak sia-sia, perjuangan Edwin akhirnya membuahkan hasil.\r\n', 'Images5.jpg');
 
 -- --------------------------------------------------------
 
@@ -121,6 +121,7 @@ CREATE TABLE IF NOT EXISTS `page_home` (
   `content6` longtext NOT NULL,
   `url_image_bg3` varchar(255) NOT NULL,
   `url_image_bg_hero_blog` varchar(255) NOT NULL,
+  `url_video` varchar(255) NOT NULL,
   PRIMARY KEY (`id_change`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -128,8 +129,27 @@ CREATE TABLE IF NOT EXISTS `page_home` (
 -- Dumping data for table `page_home`
 --
 
-INSERT INTO `page_home` (`id_change`, `url_video_hero`, `title`, `title2`, `content`, `url_image_bg2`, `title3`, `title4`, `title5`, `title6`, `content6`, `url_image_bg3`, `url_image_bg_hero_blog`) VALUES
-('1', 'BGedwin-transcode.mp4', 'Pentingnya', 'TRADING ONLINE', 'Di era modern ini, seluruh kegiatan kita lakukan secara online. Begitu juga dengan trading. Online trading menjadi sangat menarik di era serba digital ini karena berhasil menggabungkan konsep trading ruang dan waktu secara bersamaan. Internet membuat online trading memiliki lingkup internasional sehingga memungkinkan adanya penjual & pembeli setiap waktu. Sayangnya tidak adanya batas online trading ini justru mendatangkan tantangan baru bagi kita, pelakunya. Namun, orang tetap dapat bertahan di dunia online trading jika didukung dengan skill, pengalaman, serta analisa yang baik.', 'gbrvidblog-p-800x451.jpeg', 'KEUNGGULAN ONLINE TRADING', 'Ingin Bertrading Bersama Edwin?', 'PARTNERS', 'STAY UPDATED', 'Sign up for our newsletter to get the latest news,\r\n        <br>announcements, special offers and event information', 'Images2-p-1600x902.jpeg', 'Images2-p-1600x902.jpeg');
+INSERT INTO `page_home` (`id_change`, `url_video_hero`, `title`, `title2`, `content`, `url_image_bg2`, `title3`, `title4`, `title5`, `title6`, `content6`, `url_image_bg3`, `url_image_bg_hero_blog`, `url_video`) VALUES
+('1', 'BGedwin-transcodes.mp4', 'Pentingnya', 'TRADING ONLINE', 'Di era modern ini, seluruh kegiatan kita lakukan secara online. Begitu juga dengan trading. Online trading menjadi sangat menarik di era serba digital ini karena berhasil menggabungkan konsep trading ruang dan waktu secara bersamaan. Internet membuat online trading memiliki lingkup internasional sehingga memungkinkan adanya penjual & pembeli setiap waktu. Sayangnya tidak adanya batas online trading ini justru mendatangkan tantangan baru bagi kita, pelakunya. Namun, orang tetap dapat bertahan di dunia online trading jika didukung dengan skill, pengalaman, serta analisa yang baik.', 'Images3.jpg', 'KEUNGGULAN ONLINE TRADING', 'Ingin Bertrading Bersama Edwin?', 'PARTNERS', 'STAY UPDATED', 'Sign up for our newsletter to get the latest news,\r\n        <br>announcements, special offers and event information', 'Images2-p-1600x902.jpeg', 'Images2-p-1600x902.jpeg', 'v3cJwBh5e10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `page_videos`
+--
+
+CREATE TABLE IF NOT EXISTS `page_videos` (
+  `title` varchar(255) NOT NULL,
+  `caption` longtext NOT NULL,
+  `status` varchar(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `page_videos`
+--
+
+INSERT INTO `page_videos` (`title`, `caption`, `status`) VALUES
+('VIDEOS', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.', '1');
 
 -- --------------------------------------------------------
 
@@ -150,11 +170,10 @@ CREATE TABLE IF NOT EXISTS `partner` (
 --
 
 INSERT INTO `partner` (`id_content`, `url_image`, `since`, `status`) VALUES
-('1', 'bgcontact-37-p-800x451.jpeg', 'Sejak 2011', '1'),
-('2', 'bgcontact-37-p-800x451.jpeg', 'Sejak 2011', '1'),
-('3', 'bgcontact-37-p-800x451.jpeg', 'Sejak 2011', '1'),
-('4', 'Button-32.png', 'Sejak 2011', '1'),
-('5', 'bgcontact-37-p-800x451.jpeg', 'Sejak 2011', '1');
+('1', 'avatar-button_87.png', 'Sejak 2004', '1'),
+('2', 'fred.png', 'Sejak 2004', '1'),
+('3', 'volpi.png', 'Sejak 2005', '1'),
+('4', 'vw-huber.png', 'Sejak 2012', '1');
 
 -- --------------------------------------------------------
 
@@ -203,6 +222,7 @@ CREATE TABLE IF NOT EXISTS `subscriber` (
 --
 
 INSERT INTO `subscriber` (`email`, `status`) VALUES
+('andryantosw@gmail.com', '1'),
 ('hendylukas68@gmail.com', '1'),
 ('hendylukas68a@gmail.com', '1'),
 ('hendylukas6a8@gmail.com', '1'),
@@ -232,6 +252,32 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`username`, `email`, `password`, `name`, `telp`, `status`) VALUES
 ('admin', 'mail@edwinprasetyo.com', 'admin', 'Administrator', '(+6281) 7778899', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `videos`
+--
+
+CREATE TABLE IF NOT EXISTS `videos` (
+  `video_id` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `caption` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `url` varchar(255) NOT NULL,
+  `status` varchar(1) NOT NULL,
+  PRIMARY KEY (`video_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `videos`
+--
+
+INSERT INTO `videos` (`video_id`, `title`, `caption`, `date`, `url`, `status`) VALUES
+('1', 'LOREM IPSUM', 'Lorem ipsum dolor sit amets', '2017-02-16', 'v3cJwBh5e10', '0'),
+('2', 'LOREM IPSUM', 'Lorem ipsum dolor sit amet', '2017-02-16', 'v3cJwBh5e10', '1'),
+('3', 'LOREM IPSUM', 'Lorem ipsum dolor sit amet', '2017-02-16', 'v3cJwBh5e10', '1'),
+('4', 'asdasdasd', 'qweqweqwe', '2017-02-15', 'ZCRCGR_GJeM', '1');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

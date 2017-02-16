@@ -10,7 +10,7 @@ class Api extends CI_Controller {
 	public function select_post(){
 		$this->load->model("post");
 		$return = '';
-		if($_POST['search']){
+		if(isset($_POST['search'])){
 			$return = $this->post->search($_POST['isi']);
 		}else{
 			$return = $this->post->view_post_month($_POST['month'], $_POST['year']);

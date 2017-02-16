@@ -1,7 +1,11 @@
 .blogall{
-	min-height: 150px;
+	min-height: 350px;
 }
 
 .hidden{
 	display: none;
+}
+
+.blank{
+	min-height: 400px;
 }

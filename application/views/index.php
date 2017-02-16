@@ -17,7 +17,7 @@
 <body>
   <div class="navbar w-nav" data-animation="over-left" data-collapse="all" data-duration="400">
     <div class="w-container">
-      <a class="navbarlogo w-nav-brand" href="<?=base_url()?>"><img src="<?=base_url()?>resources/images/EdwinLogo_1.png" width="87">
+      <a class="navbarlogo w-nav-brand" href="<?=base_url()?>"><img src="<?=base_url()?>resources/images/EdwonLogo_4.png" width="87">
       </a>
       <nav class="openmenu w-nav-menu" data-ix="new-interaction" role="navigation">
         <a class="btnclose w-inline-block" data-ix="close-menu-bar" href="#"></a>
@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="herosection">
-    <div class="bgvid w-background-video" data-autoplay="data-autoplay" data-loop="data-loop" data-poster-url="https://daks2k3a4ib2z.cloudfront.net/589aefd8d90fbc9f3bf70b30/589bda3b26e3bc615f488dc2_BGedwin-poster-00001.jpg" data-video-urls="<?=base_url()?>resources/videos/<?= $home->url_video_hero ?>" data-wf-ignore="data-wf-ignore"></div>
+    <div class="bgvid w-background-video" data-autoplay="data-autoplay" data-loop="data-loop" data-poster-url="https://daks2k3a4ib2z.cloudfront.net/589aefd8d90fbc9f3bf70b30/589bda3b26e3bc615f488dc2_BGedwin-poster-00001.jpg" data-video-urls="<?=base_url()?>uploads/<?= $home->url_video_hero ?>" data-wf-ignore="data-wf-ignore"></div>
   </div>
   <div class="sec-pentingnya">
     <div class="div-red-divider"><img sizes="100vw" src="<?=base_url()?>resources/images/bar1-25.png" srcset="<?=base_url()?>resources/images/bar1-25-p-500x23.png 500w, <?=base_url()?>resources/images/bar1-25-p-800x36.png 800w, <?=base_url()?>resources/images/bar1-25-p-1080x49.png 1080w, <?=base_url()?>resources/images/bar1-25-p-1600x72.png 1600w, <?=base_url()?>resources/images/bar1-25-p-2000x90.png 2000w, <?=base_url()?>resources/images/bar1-25-p-2600x116.png 2600w, <?=base_url()?>resources/images/bar1-25-p-3200x143.png 3200w, <?=base_url()?>resources/images/bar1-25.png 3992w" width="1996">
@@ -48,7 +48,7 @@
       <h2 class="textkeunggulan"><?= $home->title3 ?></h2>
       <div class="rowkeunggulan w-row">
         <?php foreach($home_content_2 as $c2){?>
-          <div class="colkeunggulan w-clearfix w-col w-col-3 w-col-medium-6 w-col-small-6"><img src="<?php echo base_url("resources/") ?>images/<?=$c2->url_image?>" width="52">
+          <div class="colkeunggulan w-clearfix w-col w-col-3 w-col-medium-6 w-col-small-6"><img src="<?php echo base_url("uploads/") ?><?=$c2->url_image?>" width="52">
             <h5 class="headerkeunggulan"><?= $c2->title ?></h5>
             <p class="penjelasan-keunggulan"><?= $c2->content ?></p><img class="gariskeunggulan kebebasan w-hidden-tiny" src="<?php echo base_url("resources/") ?>images/gariskeunggulan-30.jpg" width="1.5">
           </div>
@@ -68,7 +68,7 @@
       <h2 class="textkeunggulan vid">ONLINE TRADING : GAMBLING VS TRADING</h2>
       <div class="div-vidhome">
         <div class="video w-embed w-video" style="padding-top: 56.17021276595745%;">
-          <iframe class="embedly-embed" src="https://www.youtube.com/embed/IwwU0MQUuLw" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
+          <iframe class="embedly-embed" src="https://www.youtube.com/embed/<?= $home->url_video?>" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
         </div>
         <a class="btnseemore w-inline-block" href="videos"></a>
       </div>
@@ -95,7 +95,7 @@
         </div>
       </div>
       <div class="divsumbit">
-        <a class="submit-button w-inline-block"></a>
+        <a id="subscribe" class="submit-button w-inline-block"></a>
       </div>
     </div>
   </div>

@@ -91,6 +91,17 @@ $route['cp/update/home'] = 'controlpanel/update_home';
 $route['cp/update/partner'] = 'controlpanel/update_partner';
 $route['cp/update/fitur'] = 'controlpanel/update_fitur';
 $route['cp/update/hero_blog'] = 'controlpanel/update_hero_blog';
+$route['cp/update/video'] = 'controlpanel/update_video';
+
+
+
+$route['cp/videos'] = 'controlpanel/videos';
+$route['cp/videos/(:num)'] = 'controlpanel/view_video/$1';
+$route['cp/new_video'] = 'controlpanel/new_video';
+$route['cp/add_video'] = 'controlpanel/add_video';
+$route['cp/videos/update_video'] = 'controlpanel/update_videos';
+$route['cp/videos/activate'] = 'controlpanel/update_videos';
+$route['cp/videos/deactivate'] = 'controlpanel/update_videos';
 
 //---------------------------------//
 

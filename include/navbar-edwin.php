@@ -1,6 +1,6 @@
   <div class="navbar w-nav" data-animation="over-left" data-collapse="all" data-duration="400">
     <div class="w-container">
-      <a class="navbarlogo w-nav-brand" href="<?= base_url() ?>"><img src="<?= base_url() ?>/resources/images/EdwinLogo_1.png" width="87">
+      <a class="navbarlogo w-nav-brand" href="<?= base_url() ?>"><img src="<?= base_url() ?>/resources/images/EdwonLogo_4.png" width="87">
       </a>
       <nav class="openmenu w-nav-menu" role="navigation">
         <a class="btnclose w-inline-block" data-ix="new-interaction" href="#"></a>

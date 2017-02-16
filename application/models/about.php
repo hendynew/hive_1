@@ -15,6 +15,12 @@ class About extends CI_Model {
 	public function update($data){
 		if($data["file"] == "0") {
 			unset($data["file"]);
+		}else {
+			$data['url_image'] = $data['file'];
+			unset($data['file']);
+		}
+		if(isset($data["edit3"])) {
+			unset($data["edit3"]);
 		}
 		$this->db->update("page_about",$data);
 	}

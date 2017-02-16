@@ -29,6 +29,9 @@ class Controlpanel extends CI_Controller {
 			if($user){
 				$this->session->set_userdata("active",$user);
 				redirect("cp");
+			}else{
+				$this->session->set_flashdata('notice', 'Incorrect username or password.');
+				redirect("login");
 			}
 		}
 		$this->load->view("login");
@@ -40,6 +43,11 @@ class Controlpanel extends CI_Controller {
 	}
 
 	public function home(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
 		$this->load->model("home");
 
 		$config['upload_path'] = './uploads/';
@@ -56,6 +64,11 @@ class Controlpanel extends CI_Controller {
 	}
 
 	public function blog(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
 		$this->load->model("post");
 		$data['post'] = $this->post->all_post();
 		$data['page'] = "Blog";
@@ -63,6 +76,11 @@ class Controlpanel extends CI_Controller {
 	}
 
 	public function view_blog($id){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
 		$this->load->model("post");
 		$data['post'] = $this->post->view_post($id);
 		$data['page'] = "Blog";
@@ -70,18 +88,71 @@ class Controlpanel extends CI_Controller {
 	}
 
 	public function new_blog(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
 		$data['page'] = "New Blog";
 		$this->load->view("dashboard-new-blog",$data);
 	}
 
 	public function about(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
 		$this->load->model("about");
+		$this->load->model("home");
+		$data['home'] = $this->home->load();
+		$data['content3'] = $this->home->load_content_5();
 		$data["about"] = $this->about->load();
 		$data['page'] = "About";
 		$this->load->view("dashboard-about",$data);
 	}
 
+	public function videos(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
+		$this->load->model("video");
+		$data['videos'] = $this->video->select_all();
+		$data['video_page'] = $this->video->get_page();
+		$data['page'] = "Videos";
+		$this->load->view("dashboard-videos",$data);
+	}
+
+	public function new_video(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
+		$data['page'] = "New Video";
+		$this->load->view("dashboard-new-video",$data);
+	}
+
+	public function view_video($id){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
+		$this->load->model("video");
+		$data['video'] = $this->video->select_video($id);
+		$data['page'] = "Edit Video";
+		$this->load->view("dashboard-new-video",$data);
+	}
+
 	public function account(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
 		$this->load->model("user");
 		$data['user'] = $this->user->select_all();
 		$data['page'] = "Account";
@@ -118,6 +189,8 @@ class Controlpanel extends CI_Controller {
 
 		if(isset($_POST['title6'])) $data['title6'] = $_POST['title6'];
 		if(isset($_POST['content6'])) $data['content6'] = $_POST['content6'];
+
+		if(isset($_POST['video'])) $data['url_video'] = $_POST['video'];
 		$this->load->model("home");
 		if(sizeof($data) > 0) {
 			if($this->home->update($data)) echo "1";
@@ -208,6 +281,17 @@ class Controlpanel extends CI_Controller {
 		}else $_POST["file"] = "0";
 		$this->load->model("about");
 		echo $this->about->update($_POST);
+	}
+
+	public function add_video(){
+		$this->load->model("video");
+		echo $this->video->add($_POST);
+	}
+
+	public function update_videos(){
+		$this->load->model("video");
+		$this->video->update_videos($_POST);
+		echo $_POST['status'];
 	}
 
 	public function activate_blog(){

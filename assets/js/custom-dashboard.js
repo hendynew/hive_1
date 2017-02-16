@@ -6,13 +6,13 @@ $(document).ready(function(){
     var file_data = $('#' + data +'file').prop('files')[0];
     var form_data = new FormData();
     if(data == "hero"){
-      form_data.append('img', "url_image_hero");
+      form_data.append('img', "url_video_hero");
     }
     if(data == "bodyline"){
       var data1 = $('#title').val();
       var data2 = $('#title2').val();
       var data3 = CKEDITOR.instances.content.getData();
-      data3 = data3.substring(3, data3.length - 10);
+      data3 = data3.replace("<p>","<p class='paragraph-trading-online'>");
       form_data.append('title', data1);
       form_data.append('title2', data2);
       form_data.append('content', data3);
@@ -78,7 +78,7 @@ $('body').on('click', '.submitPartner', function(e){
 
         formData.append("title",$("#title5").val());
         $.ajax({
-            url: 'cp/update/partner',
+            url: '../cp/update/partner',
             type: 'POST',
             xhr: function() {
                 var myXhr = $.ajaxSettings.xhr();
@@ -110,7 +110,7 @@ $('body').on('click', '.submitFitur', function(e){
 
         for (var i = 1; i <= 4; i++) {
           var temp = CKEDITOR.instances["fiturcontent" + i].getData();
-          temp = temp.substring(3, temp.length - 10);
+          temp = temp.replace('<p>', '<p class="penjelasan-keunggulan">');
           var temp2 = $("#fiturtitle" + i).val();
           formData.append("fiturcontent" + i,temp);
           formData.append("fiturtitle" + i,temp2);
@@ -118,9 +118,6 @@ $('body').on('click', '.submitFitur', function(e){
 
         formData.append("title",$("#fiturtitle").val());
 
-        for (var pair of formData.entries()) {
-          console.log(pair[0]+ ', ' + pair[1]); 
-        }
         
         $.ajax({
             url: 'cp/update/fitur',
@@ -181,7 +178,7 @@ $('body').on('click', '.submitNewBlog', function(e){
         formData.append("title",$("#title").val());
 
         var data3 = CKEDITOR.instances.content.getData();
-        data3 = data3.substring(3, data3.length - 10);
+        data3 = data3.replace("<p>", "<p class='partextleft'>");
         formData.append("content",data3);
         
         formData.append("caption",$("#caption").val());
@@ -218,7 +215,7 @@ $('body').on('click', '.submitUpdateBlog', function(e){
         formData.append("post_id",$("#title").data("id"));
         
         var data3 = CKEDITOR.instances.content.getData();
-        data3 = data3.substring(3, data3.length - 10);
+        data3 = data3.replace("<p>", "<p class='partextleft'>");
         formData.append("content",data3);
         
         formData.append("caption",$("#caption").val());
@@ -328,14 +325,28 @@ $('body').on('click', '.submitUpdateAccount', function(e){
 $('body').on('click', '.submitUpdateAbout', function(e){
         e.preventDefault();
         var formData = new FormData($(this).parents("form")[0]);
+
+        var content1 = CKEDITOR.instances.content1.getData();
+        content1 = content1.replace("<p>","");
+        content1 = content1.replace("</p>","");
+        var content2 = CKEDITOR.instances.content2.getData();
+        content2 = content2.replace("<p>","");
+        content2 = content2.replace("</p>","");
+        var content3 = CKEDITOR.instances.content3.getData();
+        content3 = content3.replace("<p>","");
+        content3 = content3.replace("</p>","");
+
         formData.append("title1",$("#title").val());
         formData.append("caption1",$("#caption").val());
-        formData.append("content1",CKEDITOR.instances.content1.getData());
-        formData.append("content2",CKEDITOR.instances.content2.getData());
+        formData.append("content1",content1);
+        formData.append("content2",content1);
         formData.append("title2",$("#title2").val());
         formData.append("title3",$("#title3").val());
-        formData.append("content3",CKEDITOR.instances.content3.getData());
+        formData.append("content3",content3);
         var url = "update/about";
+        for (var pair of formData.entries()) {
+          console.log(pair[0]+ ', ' + pair[1]); 
+        }
         $.ajax({
             url: url,
             type: 'POST',
@@ -356,6 +367,74 @@ $('body').on('click', '.submitUpdateAbout', function(e){
             cache: false,
             contentType: false,
             processData: false
+        });
+        return false;
+  });
+
+$('body').on('click', '.submitVideo', function(e){
+        e.preventDefault();
+        var target = $(this).data("target");
+        var temp = $("#video" + target).val();
+        var video = temp.split("=")[1];
+        $.ajax({
+            url: 'cp/update/' + target,
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+                $.notify({
+                        icon: 'pe_7s_gift',
+                        message: "Update Success!"
+
+                      },{
+                          type: 'success',
+                          timer: 1000
+                });
+            },
+            data: {target: target, video: video}
+        });
+        return false;
+  });
+
+$('body').on('click', '.submitNewVideo', function(e){
+        e.preventDefault();
+        var target = $(this).data("target");
+        var id = $(this).data("id");
+        var temp = $("#url").val();
+        var video = temp.split("=")[1];
+        var title = $("#title").val();
+        var caption = $("#caption").val();
+        var status = (target == "deactivate") ? "0" : "1";
+        
+        $.ajax({
+            url: target,
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+                $.notify({
+                        icon: 'pe_7s_gift',
+                        message: "Update Success!"
+
+                      },{
+                          type: 'success',
+                          timer: 1000
+                });
+                if(target == "activate" || target == "deactivate"){
+                  if(data == "0"){
+                    $("#btnDeactivate").fadeOut().delay(2000);
+                    $("#btnActivate").fadeIn();
+                  }else{
+                    $("#btnActivate").fadeOut().delay(2000);
+                    $("#btnDeactivate").fadeIn();
+                  }
+                }
+            },
+            data: {video_id:id, target: target, url: video, title: title, caption: caption, status: status}
         });
         return false;
   });

@@ -92,7 +92,10 @@ $(document).ready(function(){
 
 
 $( window ).scroll(function() {
-    var pos = 250;
+    var pos = 50;
     if ($(window).scrollTop() > pos)
-          $(".btnclose").click();
+          { 
+            $(".btnclose").click();
+            //alert("test");
+          }
 });

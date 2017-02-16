@@ -32,10 +32,10 @@
 											<p>About</p>
 									</a>
 							</li>
-							<li <?= ($page=="Contact") ? "class=active" : "" ?>>
-									<a href="<?=base_url()?>cp/contact">
-											<i class="pe-7s-users"></i>
-											<p>Contact</p>
+							<li <?= ($page=="Videos") ? "class=active" : "" ?>>
+									<a href="<?=base_url()?>cp/videos">
+											<i class="pe-7s-play"></i>
+											<p>Videos</p>
 									</a>
 							</li>
 					</ul>
@@ -57,20 +57,6 @@
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="fa fa-globe"></i>
-                                    <b class="caret"></b>
-                                    <span class="notification">5</span>
-                              </a>
-                              <ul class="dropdown-menu">
-                                <li><a href="#">Notification 1</a></li>
-                                <li><a href="#">Notification 2</a></li>
-                                <li><a href="#">Notification 3</a></li>
-                                <li><a href="#">Notification 4</a></li>
-                                <li><a href="#">Another notification</a></li>
-                              </ul>
-                        </li>
                         <li>
                            <a href="<?= base_url('cp/account')?>">
                                Account

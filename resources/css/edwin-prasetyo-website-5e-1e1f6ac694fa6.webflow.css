@@ -147,7 +147,7 @@ a {
   height: 670px;
   margin-bottom: 0px;
   padding-left: 0px;
-  background-image: url('../images/Images3.jpg');
+  background-image: url('../../uploads/Images3.jpg');
   background-position: 50% 0px;
   background-size: cover;
 }
@@ -319,6 +319,7 @@ a {
 }
 
 .ingin.ingiinmob {
+  padding-left: 122px;
   font-size: 20px;
 }
 
@@ -787,7 +788,6 @@ a {
 
 .col-gambar-aboutedwin {
   height: 633px;
-  background-image: url('../images/Images5.jpg');
   background-position: 50% 50%;
   background-size: cover;
   background-attachment: scroll;
@@ -1460,6 +1460,8 @@ a {
   min-width: 0px;
   margin-right: auto;
   margin-left: auto;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .text-sejak-partner {

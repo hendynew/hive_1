@@ -13,10 +13,10 @@
         </div>
         <div class="w-col w-col-4">
           <div class="divtelp"><img class="phoneicon" src="<?=base_url('resources/')?>images/icon8.png" width="22">
-            <div class="phonetext">(+6281) 7778899</div>
+            <div class="phonetext"><?= $user->telp?></div>
           </div>
           <div class="divemail"><img class="emailico" src="<?=base_url('resources/')?>images/icon9.png" width="26">
-            <div class="email phonetext">edwinprasetyo@gmail.com</div>
+            <div class="email phonetext"><?= $user->email?></div>
           </div>
         </div>
       </div>
@@ -24,6 +24,6 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-  <script src="<?=base_url()?>resources/js/webflow.js" type="text/javascript"></script>
-  <script src="<?php echo base_url("resources/") ?>js/custom.js" type="text/javascript"></script>
+  <script src="<?= base_url()?>resources/js/webflow.js" type="text/javascript"></script>
+  <script src="<?= base_url()?>resources/js/custom.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->

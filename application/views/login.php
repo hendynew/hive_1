@@ -2,10 +2,10 @@
 <html >
 <head>
   <meta charset="UTF-8">
-  <title>Control Panel Login</title>
+  <title>Hive Dashboard</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
+  <link rel="icon" type="image/png" href="<?= base_url()?>resources/images/logo-hive.png">
 
       <style>
       /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
@@ -28,13 +28,7 @@ body {
 	width: 100%;
 	height:100%;
 	font-family: 'Open Sans', sans-serif;
-	background: #092756;
-	background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top,  rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg,  #670d10 0%, #092756 100%);
-	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg,  #670d10 0%,#092756 100%);
-	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom,  rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg,  #670d10 0%,#092756 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 );
+	background: white;
 }
 .login {
 	position: absolute;
@@ -66,7 +60,11 @@ input {
 	transition: box-shadow .5s ease;
 }
 input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2); }
-
+	#logo{
+		display: block;
+		margin: auto;
+		margin-bottom: 10px;
+	}
     </style>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
@@ -75,10 +73,11 @@ input:focus { box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgb
 
 <body>
   <div class="login">
-	<h1>Login</h1>
+  	<?php if($this->session->flashdata('notice')) echo '<script>alert("' . $this->session->flashdata('notice') . '")</script>'; ?>
+	<img id='logo' src="<?=base_url()?>resources/images/logo-hive.png" width=100px />
     <?= form_open("login")?>
-    	<input type="text" name="u" placeholder="Username" required="required" value="admin"/>
-        <input type="password" name="p" placeholder="Password" required="required" value="admin"/>
+    	<input type="text" name="u" placeholder="Username" required="required" value=""/>
+        <input type="password" name="p" placeholder="Password" required="required" value=""/>
         <?= form_submit(array("name"=>"btnLogin","class"=>"btn btn-primary btn-block btn-large","value"=>"Let me in."))?>
     </form>
 </div>

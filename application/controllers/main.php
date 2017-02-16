@@ -24,15 +24,21 @@ class Main extends CI_Controller {
 		$this->load->model("subscriber");
 		$this->subscriber->add($this->input->post("Email"));
 		$this->session->set_flashdata("notice","success");
-		redirect("");
+		echo "ok";
 	}
 
 	public function videos(){
-		$this->load->view("videos");
+		$this->load->model("user");
+		$this->load->model("video");
+		$data['user'] = $this->user->get();
+		$data['page'] = $this->video->get_page();
+		$data['videos'] = $this->video->get();
+		$this->load->view("videos",$data);
 	}
 
 	public function blog(){
 		$this->load->model("post");
+		$data['user'] = $this->user->get();
 		$data['month'] = ($this->uri->segment(2) ? $this->uri->segment(2) : date("m"));
 		$data['year'] = ($this->input->post("year") ? $this->input->post("year") : date("y"));
 		$data['posts'] = $this->post->view_post_month($data['month'],$data['year']);
@@ -61,6 +67,9 @@ class Main extends CI_Controller {
 
 	public function about(){
 		$this->load->model("about");
+		$this->load->model('home');
+		$data['home'] = $this->home->load();
+		$data["partner"] = $this->home->load_content_5();
 		$data['user'] = $this->user->get();
 		$data['about'] = $this->about->load();
 		$this->load->view("about",$data);
@@ -96,11 +105,7 @@ class Main extends CI_Controller {
 		$this->email->to($admin->email);
 
 		$this->email->subject($name . ' wants to talk to you.');
-		$this->email->message(
-			'Email : ' . $email . '<br>' .
-			'Name : ' . $name .' <hr>' .
-			'Message : ' . $message
-		);
+		$this->email->message('Email : ' . $email . '<br> Name : ' . $name .' <hr>Message : ' . $message);
 
 		if($this->email->send()){
 			$this->load->model("message");
@@ -110,6 +115,6 @@ class Main extends CI_Controller {
 			$this->session->set_flashdata('status','failed');
 		}
 
-		redirect("contact");
+		echo "ok";
 	}
 }
