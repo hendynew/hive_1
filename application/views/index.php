@@ -29,7 +29,7 @@
     </div>
   </div>
   <div class="herosection">
-    <div class="bgvid w-background-video" data-autoplay="data-autoplay" data-loop="data-loop" data-poster-url="https://daks2k3a4ib2z.cloudfront.net/589aefd8d90fbc9f3bf70b30/589bda3b26e3bc615f488dc2_BGedwin-poster-00001.jpg" data-video-urls="<?=base_url()?>uploads/<?= $home->url_video_hero ?>" data-wf-ignore="data-wf-ignore"></div>
+    <div class="bgvid w-background-video" data-autoplay="data-autoplay" data-loop="data-loop" data-poster-url="" data-video-urls="<?=base_url()?>uploads/<?= $home->url_video_hero ?>" data-wf-ignore="data-wf-ignore"></div>
   </div>
   <div class="sec-pentingnya">
     <div class="div-red-divider"><img sizes="100vw" src="<?=base_url()?>resources/images/bar1-25.png" srcset="<?=base_url()?>resources/images/bar1-25-p-500x23.png 500w, <?=base_url()?>resources/images/bar1-25-p-800x36.png 800w, <?=base_url()?>resources/images/bar1-25-p-1080x49.png 1080w, <?=base_url()?>resources/images/bar1-25-p-1600x72.png 1600w, <?=base_url()?>resources/images/bar1-25-p-2000x90.png 2000w, <?=base_url()?>resources/images/bar1-25-p-2600x116.png 2600w, <?=base_url()?>resources/images/bar1-25-p-3200x143.png 3200w, <?=base_url()?>resources/images/bar1-25.png 3992w" width="1996">

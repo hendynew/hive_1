@@ -48,6 +48,7 @@
                                                     <th>Date</th>
                                                     <th>Caption</th>
                                                     <th>Content</th>
+                                                    <th>Viewed</th>
                                                     <th>Status</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -61,6 +62,7 @@
                                                 	echo "<td>" .  $post[$i]['date'] . "</td>";
                                                 	echo "<td>" .  substr($post[$i]['caption'],0,50) . "..</td>";
                                                 	echo "<td>" .  substr($post[$i]['post'],0,50) . "..</td>";
+                                                    echo "<td>" .  $post[$i]['viewed'] . "</td>";
                                                 	echo "<td>" .  $status . "</td>";
                                                 	echo "<td>" .  anchor(base_url() . "cp/blog/" . $post[$i]['post_id'],"<i class='pe-7s-search'></i>View") . "</td>";
                                                 	echo "</tr>";

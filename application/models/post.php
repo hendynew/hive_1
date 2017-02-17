@@ -16,6 +16,13 @@ class Post extends CI_Model {
 	}
 
 	public function view_post($id){
+		$hasil = $this->db->where(array("post_id"=>$id,"status","1"))->get("post")->row();
+		$hasil->date = $this->change_format_date($hasil->date);
+		$this->db->where("post_id",$id)->update("post",array("viewed"=>$hasil->viewed+1));
+		return $hasil;
+	}
+
+	public function select_post($id){
 		$hasil = $this->db->where("post_id",$id)->get("post")->row();
 		$hasil->date = $this->change_format_date($hasil->date);
 		return $hasil;
@@ -54,7 +61,8 @@ class Post extends CI_Model {
 			"post"=>$data['content'],
 			"status"=>1
 		];
-		if($data['file'] != "0") $arr["url_image"] = $data['file'];
+		if($data['file'] != "0") $arr["url_image"] = $data['file']; 
+			else $arr['url_image'] = "Images8.jpg";
 		if($this->db->insert("post",$arr)) echo "1";
 	}
 

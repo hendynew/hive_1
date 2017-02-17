@@ -3,6 +3,7 @@ a {
 }
 
 .herosection {
+
   height: 100vh;
   margin-top: 0px;
 }
@@ -1357,6 +1358,10 @@ a {
   height: 100vh;
 }
 
+.bgvid video{
+  width: 100%;
+}
+
 .div-vidhome {
   display: block;
   width: 650px;
@@ -1665,6 +1670,7 @@ html.w-mod-js *[data-ix="modal-interaction"] {
   .form {
     padding-right: 113px;
     padding-left: 113px;
+    width: 100%;
   }
   .footer-section {
     padding-right: 27px;
@@ -1820,6 +1826,7 @@ html.w-mod-js *[data-ix="modal-interaction"] {
   }
   .textfield {
     display: block;
+    margin: auto;
   }
   .footer-section {
     padding-right: 20px;
@@ -2176,16 +2183,19 @@ html.w-mod-js *[data-ix="modal-interaction"] {
     font-size: 15px;
   }
   .form {
-    margin-right: -74px;
-    margin-left: -74px;
+    margin-right: auto;
+    margin-left: auto;
     padding-right: 0px;
     padding-left: 0px;
+    text-align: center;
   }
   .textfield {
-    margin-left: 0px;
     padding-right: 0px;
     padding-left: 0px;
     font-size: 13px;
+    display: block;
+    margin: auto;
+    width: 80%;
   }
   .textfield.fieldcontact {
     margin-right: 0px;
@@ -2378,7 +2388,8 @@ html.w-mod-js *[data-ix="modal-interaction"] {
     padding-left: 6px;
   }
   .bgvid {
-    height: 100%;
+    width: 100%;
+    height: auto;
   }
   .div-vidhome {
     width: 305px;

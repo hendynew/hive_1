@@ -82,7 +82,7 @@ class Controlpanel extends CI_Controller {
 			redirect("controlpanel/login");
 		}
 		$this->load->model("post");
-		$data['post'] = $this->post->view_post($id);
+		$data['post'] = $this->post->select_post($id);
 		$data['page'] = "Blog";
 		$this->load->view("dashboard-view-blog",$data);
 	}
@@ -251,13 +251,15 @@ class Controlpanel extends CI_Controller {
 
 	public function submit_blog($action){
 		$arr = [];
-		if($_FILES["file"]['error'] == 0){
+		if(isset($_FILES['file'])){
+			if($_FILES["file"]['error'] == 0){
 				if(move_uploaded_file($_FILES["file"]['tmp_name'], 'uploads/' . $_FILES["file"]['name'])) {
 			    	$arr['file'] = $_FILES["file"]['name'];
 				} else{
 				    $arr['file'] = "0";
 				}
 			} else $arr['file'] = "0";
+		}else $arr['file'] = "0";
 		$arr['title'] = $_POST["title"];
 		$arr['caption'] = $_POST["caption"];
 		$arr['content'] = $_POST["content"];

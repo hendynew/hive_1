@@ -47,22 +47,9 @@ class Main extends CI_Controller {
 
 	public function view_blog($id_blog){
 		$this->load->model("post");
-		$this->load->library("pagination");
 		$data['user'] = $this->user->get();
-		$config['base_url'] = base_url() . "view_blog";
-		$config["total_rows"] = $this->post->count_post();
-		$config['per_page'] = 1;
-		$config['use_page_numbers'] = TRUE;
-		$config['num_links'] = 2;
-		$config["uri_segment"] = 2;
-		$config['first_tag_close'] = '</h3></a>';
-		$config['prev_link'] = '';
-		$config['first_link'] = '1';
-		$config['last_link'] = $this->post->count_post();
-		$this->pagination->initialize($config);
-		$data['link'] = $this->pagination->create_links3();
-		$data["post"] = ($id_blog == "latest") ? $this->post->view_post($config["total_rows"]) : $this->post->view_post($id_blog);
-		$this->load->view("blog-content-1",$data);
+		$data["post"] = ($id_blog == "latest") ? $this->post->view_post($this->post->count_post()) : $this->post->view_post($id_blog);
+		$this->load->view("blog-content-".$data['post']->blog_content,$data);
 	}
 
 	public function about(){
