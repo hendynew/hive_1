@@ -14,7 +14,11 @@ class Subscriber extends CI_Model {
 			$this->db->insert("subscriber",array("email"=>$email,"status"=>"1"));
 	}
 
-	public function email(){
+	public function select_all(){
+		return $this->db->get("subscriber")->result_array();
+	}
 
+	public function get(){
+		return $this->db->where('status','1')->get("subscriber")->result();
 	}
 }

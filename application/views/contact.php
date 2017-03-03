@@ -18,7 +18,7 @@
 <body>
   <div class="navbar navbarcontact w-nav" data-animation="over-left" data-collapse="all" data-duration="400">
     <div class="w-container">
-      <a class="navbarlogo w-nav-brand" href="index.html"><img src="<?= base_url() ?>resources/images/EdwinLogo_1.png" width="87">
+      <a class="navbarlogo w-nav-brand" href="<?= base_url()?>"><img src="<?= base_url() ?>resources/images/EdwinLogo_1.png" width="87">
       </a>
       <nav class="openmenu w-nav-menu" role="navigation">
         <a class="btnclose w-inline-block" data-ix="new-interaction" href="#"></a>
@@ -33,32 +33,31 @@
     <div class="contcontact sendmeyour w-container">
       <h1 class="contact stay textkeunggulan">SEND ME YOUR MESSAGE</h1>
       <div class="w-form">
-        <form class="form formcontact" data-name="Email Form" id="email-form" name="email-form">
+        <form class="form formcontact" id="contact">
           <div class="w-row">
             <div class="w-col w-col-6">
-              <input class="fieldcontact textfield w-input" data-name="Name" id="Name" maxlength="256" name="Name" placeholder="What&#39;s your name?" required="required" type="text">
+              <input class="fieldcontact textfield w-input" name="Name" id="Name" maxlength="256" name="Name" placeholder="What&#39;s your name?" required="required" type="text">
             </div>
             <div class="w-col w-col-6">
-              <input class="fieldcontact textfield w-input" data-name="Email" id="Email" maxlength="256" name="Email" placeholder="Drop your e-mail here" required="required" type="email">
+              <input class="fieldcontact textfield w-input" name="Email" id="Email" maxlength="256" name="Email" placeholder="Drop your e-mail here" required="required" type="email">
             </div>
           </div>
-          <textarea class="fieldcontact textarea textfield w-input" data-name="Message" id="Message" maxlength="5000" name="Message" placeholder="Let&#39;s talk"></textarea>
-        </form>
+          <textarea class="fieldcontact textarea textfield w-input" name="Message" id="Message" maxlength="5000" name="Message" placeholder="Let&#39;s talk"></textarea>
         <div class="w-form-done">
           <div>Thank you! Your submission has been received!</div>
-        </div>
+      </div>
         <div class="w-form-fail">
           <div>Oops! Something went wrong while submitting the form</div>
         </div>
       </div>
       <div class="divsumbit">
-        <a class="send submit-button w-inline-block" href="#"></a>
+        <a id="sendmail" class="send submit-button w-inline-block" href=""></a>
       </div>
+      </form>
     </div>
   </div>
   <?php include('include/footer-edwin.php') ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js" type="text/javascript"></script>
-  <script src="<?= base_url() ?>resources/js/webflow.js" type="text/javascript"></script>
   <!-- [if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif] -->
 </body>
 </html>

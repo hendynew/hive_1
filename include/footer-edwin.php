@@ -3,11 +3,11 @@
       <div class="w-row">
         <div class="w-clearfix w-col w-col-8"><img class="logo moblogo" src="<?=base_url('resources/')?>images/EdwinLogo_2.png" width="91"><img class="tandatangan" sizes="(max-width: 479px) 100vw, (max-width: 767px) 142px, 225px" src="<?=base_url('resources/')?>images/EdwinLogo_3.png" srcset="<?=base_url('resources/')?>images/EdwinLogo_3-p-500x87.png 500w, <?=base_url('resources/')?>images/EdwinLogo_3.png 528w" width="258">
           <div class="divsosmed w-clearfix">
-            <a class="linkinstagram w-inline-block" href="#"><img src="<?=base_url('resources/')?>images/icon5.png" width="27.5">
+            <a class="linkinstagram w-inline-block" href="https://www.instagram.com/edwintraderofficial/"><img src="<?=base_url('resources/')?>images/icon5.png" width="27.5">
             </a>
-            <a class="linkinstagram w-inline-block" href="#"><img src="<?=base_url('resources/')?>images/icon6.png" width="27.5">
+            <a class="linkinstagram w-inline-block" href="https://www.facebook.com/edwintraderofficial"><img src="<?=base_url('resources/')?>images/icon6.png" width="27.5">
             </a>
-            <a class="linkinstagram w-inline-block" href="#"><img src="<?=base_url('resources/')?>images/icon7.png" width="27.5">
+            <a class="linkinstagram w-inline-block" href="http://forums.babypips.com/members/mixmatchtrader.html"><img src="<?=base_url('resources/')?>images/icon7.png" width="27.5">
             </a>
           </div>
         </div>

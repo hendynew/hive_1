@@ -38,6 +38,12 @@
 											<p>Videos</p>
 									</a>
 							</li>
+                            <li <?= ($page=="Newsletter") ? "class=active" : "" ?>>
+                                    <a href="<?=base_url()?>cp/newsletter">
+                                            <i class="pe-7s-user"></i>
+                                            <p>Newsletter</p>
+                                    </a>
+                            </li>
 					</ul>
 		</div>
 

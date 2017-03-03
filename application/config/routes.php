@@ -56,6 +56,16 @@ $route['default_controller'] = 'main';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['home/index'] = 'main/index';
+$route['home/sendmail'] = 'main/sendmail';
+$route['home/about'] = 'main/about';
+$route['home/blog'] = 'main/blog';
+$route['home/contact'] = 'main/contact';
+$route['home/subscribe'] = 'main/subscribe';
+$route['home/view_blog/(:any)'] = 'main/view_blog/$1';
+$route['home/view_blog'] = 'main/view_blog/1';
+
+
 $route['index'] = 'main/index';
 $route['sendmail'] = 'main/sendmail';
 $route['about'] = 'main/about';
@@ -83,7 +93,7 @@ $route['cp/update/account'] = 'controlpanel/update_account';
 $route['cp/about'] = 'controlpanel/about';
 $route['cp/update/about'] = 'controlpanel/update_about';
 
-$route['home'] = 'controlpanel/home';
+$route['home'] = 'main/index';
 $route['login'] = 'controlpanel/login';
 $route['logout'] = 'controlpanel/logout';
 
@@ -93,7 +103,8 @@ $route['cp/update/fitur'] = 'controlpanel/update_fitur';
 $route['cp/update/hero_blog'] = 'controlpanel/update_hero_blog';
 $route['cp/update/video'] = 'controlpanel/update_video';
 
-
+$route['cp/newsletter'] = 'controlpanel/newsletter';
+$route['cp/sendNewsletter'] = 'controlpanel/sendNewsletter';
 
 $route['cp/videos'] = 'controlpanel/videos';
 $route['cp/videos/(:num)'] = 'controlpanel/view_video/$1';

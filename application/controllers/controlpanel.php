@@ -17,7 +17,7 @@ class Controlpanel extends CI_Controller {
 		}else{
 			redirect("controlpanel/login");
 		}
-		redirect("home");
+		redirect("controlpanel/home");
 	}
 
 	public function login(){
@@ -73,6 +73,18 @@ class Controlpanel extends CI_Controller {
 		$data['post'] = $this->post->all_post();
 		$data['page'] = "Blog";
 		$this->load->view("dashboard-blog",$data);
+	}
+
+	public function newsletter(){
+		if($this->session->userdata("active")){
+			$data["active"] = $this->session->userdata('active');
+		}else{
+			redirect("controlpanel/login");
+		}
+		$this->load->model("subscriber");
+		$data['subscriber'] = $this->subscriber->select_all();
+		$data['page'] = "Newsletter";
+		$this->load->view("dashboard-newsletter",$data);
 	}
 
 	public function view_blog($id){
@@ -299,5 +311,42 @@ class Controlpanel extends CI_Controller {
 	public function activate_blog(){
 		$this->load->model("post");
 		echo $this->post->activate($_POST["id"]);
+	}
+
+	public function sendNewsletter(){
+		$this->load->model("subscriber");
+		$subscriber = $this->subscriber->get();
+		$subject = $_POST['subject'];
+		$content = $_POST['content'];
+		
+		$config = array(
+	    'protocol' => 'smtp',
+	    'smtp_host' => 'ssl://smtp.googlemail.com',
+	    'smtp_port' => 465,
+	    'smtp_timeout' => '7',
+	    'smtp_user' => 'email.edwinprasetyo@gmail.com',
+	    'smtp_pass' => 'edwinprasetyo',
+	    'mailtype'  => 'html',
+	    'charset'   => 'utf-8'
+		);
+
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+
+		$this->email->initialize($config);
+
+		$this->email->from('email.edwinprasetyo@gmail.com', 'Admin Email');
+		
+
+		$this->email->subject($subject);
+		$this->email->message($content);
+		$arr = [];
+		$ctr = 0;
+		foreach($subscriber as $s){
+			$arr[$ctr++] = $s->email;
+			echo "sent " . $s->email . "<br>";
+		}
+		$this->email->to($arr);
+		$this->email->send();
 	}
 }

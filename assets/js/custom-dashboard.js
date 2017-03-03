@@ -398,6 +398,32 @@ $('body').on('click', '.submitVideo', function(e){
         return false;
   });
 
+$('body').on('click', '.sendNewsletter', function(e){
+        e.preventDefault();
+        var subject = $("#subject").val();
+        var content = CKEDITOR.instances.content.getData();
+        $.ajax({
+            url: 'sendNewsletter',
+            type: 'POST',
+            xhr: function() {
+                var myXhr = $.ajaxSettings.xhr();
+                return myXhr;
+            },
+            success: function (data) {
+                $.notify({
+                        icon: 'pe_7s_gift',
+                        message: "Update Success!"
+
+                      },{
+                          type: 'success',
+                          timer: 1000
+                });
+            },
+            data: {subject: subject, content: content}
+        });
+        return false;
+  });
+
 $('body').on('click', '.submitNewVideo', function(e){
         e.preventDefault();
         var target = $(this).data("target");

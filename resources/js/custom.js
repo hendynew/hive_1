@@ -30,6 +30,18 @@ $(document).ready(function(){
     });
   });
 
+  $( ".send" ).click(function( event ) {
+    var data = $("#contact").serializeArray();
+    console.log( data );
+    $.ajax({
+      type: "POST",
+      url: "sendmail",
+      data: {"data":data},
+      success:function(){$(".w-form-done").slideDown();}
+    });
+    return false;
+  });
+
   $(".selectMonth").click(function(){
     var value = $(this).html();
     var month = $(this).data("month");

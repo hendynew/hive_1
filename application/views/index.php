@@ -21,7 +21,7 @@
       </a>
       <nav class="openmenu w-nav-menu" data-ix="new-interaction" role="navigation">
         <a class="btnclose w-inline-block" data-ix="close-menu-bar" href="#"></a>
-        <h2 class="edwinmenu">Edwin<br>Prasetyo</h2><img class="reddivbar" src="<?=base_url()?>resources/images/barmerah-33.png"><a class="navlink w-nav-link" href="about">About</a><a class="navlink w-nav-link" href="videos">Videos</a><a class="navlink w-nav-link" href="blog">Blog</a><a class="forum navlink w-nav-link" href="blog">Forum</a><a class="navlink w-nav-link" href="contact">Contact</a>
+        <h2 class="edwinmenu">Edwin<br>Prasetyo</h2><img class="reddivbar" src="<?=base_url()?>resources/images/barmerah-33.png"><a class="navlink w-nav-link" href="about">About</a><a class="navlink w-nav-link" href="#">Videos</a><a class="navlink w-nav-link" href="blog">Blog</a><a class="forum navlink w-nav-link" href="blog">Forum</a><a class="navlink w-nav-link" href="contact">Contact</a>
       </nav>
       <div class="menubtn w-nav-button">
         <div class="iconstyle w-icon-nav-menu"></div>
@@ -70,7 +70,7 @@
         <div class="video w-embed w-video" style="padding-top: 56.17021276595745%;">
           <iframe class="embedly-embed" src="https://www.youtube.com/embed/<?= $home->url_video?>" scrolling="no" frameborder="0" allowfullscreen=""></iframe>
         </div>
-        <a class="btnseemore w-inline-block" href="videos"></a>
+        <a class="btnseemore w-inline-block" href="#"></a>
       </div>
     </div>
   </div>

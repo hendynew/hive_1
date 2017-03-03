@@ -22,9 +22,37 @@ class Main extends CI_Controller {
 
 	public function subscribe(){
 		$this->load->model("subscriber");
-		$this->subscriber->add($this->input->post("Email"));
+		
+		$config = array(
+	    'protocol' => 'smtp',
+	    'smtp_host' => 'ssl://smtp.googlemail.com',
+	    'smtp_port' => 465,
+	    'smtp_timeout' => '7',
+	    'smtp_user' => 'email.edwinprasetyo@gmail.com',
+	    'smtp_pass' => 'edwinprasetyo',
+	    'mailtype'  => 'html',
+	    'charset'   => 'utf-8'
+		);
+
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+
+		$this->email->initialize($config);
+
+		$this->email->from('email.edwinprasetyo@gmail.com', 'Admin Email');
+		$this->email->to($this->input->post("Email"));
+
+		$this->email->subject('Thank you for subscribing!');
+		$this->email->message('We are looking forward to work with you! Thanks ! By: edwinprasetyo');
+
+		if($this->email->send()){
+			$this->load->model("message");
+			$this->subscriber->add($this->input->post("Email"));
+			echo "OK";
+		}else{
+			echo "No";
+		}
 		$this->session->set_flashdata("notice","success");
-		echo "ok";
 	}
 
 	public function videos(){
@@ -66,21 +94,20 @@ class Main extends CI_Controller {
 		$data['user'] = $this->user->get();
 		$this->load->view("contact",$data);
 	}
-
 	public function sendmail(){
 		$this->load->model("user");
 		$admin = $this->user->email();
-		$name = $this->input->post("Name");
-		$email = $this->input->post("Email");
-		$message = $this->input->post("Message");
+		$data = $_POST['data'];
+		
 		$config = array(
 	    'protocol' => 'smtp',
 	    'smtp_host' => 'ssl://smtp.googlemail.com',
 	    'smtp_port' => 465,
+	    'smtp_timeout' => '7',
 	    'smtp_user' => 'email.edwinprasetyo@gmail.com',
 	    'smtp_pass' => 'edwinprasetyo',
 	    'mailtype'  => 'html',
-	    'charset'   => 'iso-8859-1'
+	    'charset'   => 'utf-8'
 		);
 
 		$this->load->library('email', $config);
@@ -91,17 +118,16 @@ class Main extends CI_Controller {
 		$this->email->from('email.edwinprasetyo@gmail.com', 'Admin Email');
 		$this->email->to($admin->email);
 
-		$this->email->subject($name . ' wants to talk to you.');
-		$this->email->message('Email : ' . $email . '<br> Name : ' . $name .' <hr>Message : ' . $message);
+		$this->email->subject($data[0]['value'] . ' wants to talk to you.');
+		$this->email->message('Email : ' . $data[1]['value'] . '<br> Name : ' . $data[0]['value'] .' <hr>Message : ' . $data[2]['value']);
 
 		if($this->email->send()){
 			$this->load->model("message");
-			$this->message->add($name,$email,$message);
-			$this->session->set_flashdata('status','success');
+			$this->message->add($data[0]['value'],$data[1]['value'],$data[2]['value']);
+			echo "OK";
 		}else{
-			$this->session->set_flashdata('status','failed');
+			echo "No";
 		}
-
-		echo "ok";
+		
 	}
 }
